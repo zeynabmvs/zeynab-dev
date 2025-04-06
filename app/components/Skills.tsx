@@ -5,34 +5,33 @@ type Skill = {
   icon: string;
 };
 
-type SkillsListProps = { 
-  skills: Skill[] 
+type SkillsListProps = {
+  skills: Skill[];
 };
 
 const SkillsList: React.FC<SkillsListProps> = ({ skills }) => (
-  <section className="space-y-4">
-    <div className="rounded-lg border bg-card shadow-sm p-6">
-      <h2 className="text-2xl font-bold mb-3">Skills</h2>
+  <div className="card p-6">
+    <h2 className="text-2xl font-bold mb-3">Skills</h2>
 
-      <div className="flex flex-wrap gap-2">
-        {skills.map(skill => (
-          <div
-            key={skill.name}
-            className="inline-flex items-center gap-2 rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold hover:bg-muted/80"
-          >
-            <Image
-              src={skill.icon}
-              alt={`${skill.name} icon`}
-              width={16}
-              height={16}
-              className="opacity-70"
-            />
+    <div className="flex flex-wrap gap-4">
+      {skills.map((skill) => (
+        <div
+          key={skill.name}
+          className="inline-flex items-center gap-1.5 rounded-full"
+        >
+          <Image
+            src={skill.icon}
+            alt={`${skill.name} icon`}
+            width={16}
+            height={16}
+          />
+          <span className="text-muted text-xs ">
             {skill.name}
-          </div>
-        ))}
-      </div>
+          </span>
+        </div>
+      ))}
     </div>
-  </section>
+  </div>
 );
 
 export default SkillsList;

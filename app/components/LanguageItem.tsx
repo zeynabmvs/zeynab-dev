@@ -12,12 +12,12 @@ type LanguageItemProps = {
 };
 
 const LanguageItem: React.FC<LanguageItemProps> = ({ language }) => (
-  <div className="flex items-center gap-1 text-xs bg-muted px-2 py-1 rounded-full">
+  <div className="flex items-center space-x-2">
     <div
-      className="w-2 h-2 rounded-full"
+      className="size-3 rounded-full"
       style={{ backgroundColor: language.color }}
     />
-    <span>{language.name}</span>
+    <span className="text-muted text-xs">{language.name}</span>
   </div>
 );
 

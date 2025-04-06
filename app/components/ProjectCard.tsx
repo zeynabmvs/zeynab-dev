@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   projectLangs,
 }) => (
-  <div className="rounded-lg border bg-card shadow-sm overflow-hidden">
+  <div className="card card-shadow overflow-hidden">
     <div className="relative w-full h-48">
       <Image
         src={imageUrl}
@@ -33,13 +33,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <a className="font-semibold hover:underline" href={url}>
         {title}
       </a>
-      <p className="text-sm mt-1">{description}</p>
-      <div className="flex flex-wrap gap-2 mt-4">
-        {projectLangs.map((index) => (
-          <LanguageItem key={index} language={languages[index]} />
-        ))}
-      </div>
-      <div className="mt-4 pt-4 border-t">
+      <p className="text-sm mt-1 text-muted">{description}</p>
+      <div className="flex justify-between items-center mt-4">
+        <div className="flex flex-wrap gap-2">
+          {projectLangs.map((index) => (
+            <LanguageItem key={index} language={languages[index]} />
+          ))}
+        </div>
         <a
           href={url}
           target="_blank"
