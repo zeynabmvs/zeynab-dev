@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { ProfileCard } from "@/app/components/ProfileCard";
 import SkillsList from "@/app/components/Skills";
 import ExperienceCard from "@/app/components/Experience";

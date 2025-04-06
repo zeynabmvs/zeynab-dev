@@ -1,27 +1,28 @@
 import Image from "next/image";
 import { languages } from "@/app/data/data";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import LanguageItem from "./LanguageItem";
 
 // Project Card Component
-type ProjectCardProps = { 
-  title: string; 
-  description: string; 
+type ProjectCardProps = {
+  title: string;
+  description: string;
   url: string;
   imageUrl: string;
-  languageIndices: number[];
+  projectLangs: number[];
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ 
-  title, 
-  description, 
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
   url,
   imageUrl,
-  languageIndices 
+  projectLangs,
 }) => (
   <div className="rounded-lg border bg-card shadow-sm overflow-hidden">
     <div className="relative w-full h-48">
-      <Image 
-        src={imageUrl} 
+      <Image
+        src={imageUrl}
         alt={`${title} preview`}
         fill
         className="object-cover"
@@ -34,33 +35,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </a>
       <p className="text-sm mt-1">{description}</p>
       <div className="flex flex-wrap gap-2 mt-4">
-        {languageIndices.map((index) => (
-          <div 
-            key={index} 
-            className="flex items-center gap-1 text-xs bg-muted px-2 py-1 rounded-full"
-          >
-            <div 
-              className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: languages[index].color }}
-            />
-            <span>
-              {languages[index].name}
-            </span>
-            <a 
-              href={languages[index].repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-1 hover:opacity-80"
-            >
-              <ArrowTopRightOnSquareIcon 
-                className="w-3 h-3"
-              />
-            </a>
-          </div>
+        {projectLangs.map((index) => (
+          <LanguageItem key={index} language={languages[index]} />
         ))}
       </div>
       <div className="mt-4 pt-4 border-t">
-        <a 
+        <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
