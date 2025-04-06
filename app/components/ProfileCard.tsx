@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Button from "./Button";
 
 // Avatar Component
 type AvatarProps = { src: string; alt: string };
 const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
   <div className="relative w-12 h-12 md:w-24 md:h-24">
     <Image
-      className="rounded-full object-cover border"
+      className="rounded-full object-cover border border-zinc-500"
       src={src}
       alt={alt}
       fill
@@ -38,21 +39,32 @@ const ProfileBio: React.FC<ProfileBioProps> = ({ bio }) => (
 );
 
 // Profile Links Component
-type ProfileLinksProps = { links: { href: string; label: string }[] };
+type ProfileLinksProps = {
+  links: {
+    href: string;
+    label: string;
+    icon: React.ReactNode;
+    active: boolean;
+  }[];
+};
+
 const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
-  <div className="mt-4 flex flex-col space-y-1.5 border-t pt-3 w-full">
-    {links.map(({ href, label }) => (
-      <a
-        key={href}
-        target="_blank"
-        className="cursor-pointer flex items-center gap-1.5 group"
-        href={href}
-      >
-        <p className="text-xs transition-colors duration-200 ease-in-out text-muted">
-          {label}
-        </p>
-      </a>
-    ))}
+  <div className="mt-4 flex flex-col space-y-1.5 border-t pt-3 border-zinc-300">
+    {links
+      .filter((link) => link.active)
+      .map(({ href, label, icon }) => (
+        <a
+          key={href}
+          target="_blank"
+          className=" flex items-center gap-2 group "
+          href={href}
+        >
+          {icon}
+          <p className="text-sm transition-colors duration-200 ease-in-out text-muted">
+            /{label}
+          </p>
+        </a>
+      ))}
   </div>
 );
 
@@ -62,18 +74,29 @@ type ProfileCardProps = {
   role: string;
   avatar: string;
   bio: string;
-  links: { href: string; label: string }[];
+  contactLink: string;
+  links: {
+    href: string;
+    label: string;
+    icon: React.ReactNode;
+    active: boolean;
+  }[];
 };
+
 const ProfileCard: React.FC<ProfileCardProps> = ({
   name,
   role,
   avatar,
   bio,
+  contactLink,
   links,
 }) => (
   <div className="card p-4 md:p-6">
     <ProfileHeader name={name} role={role} avatar={avatar} />
     <ProfileBio bio={bio} />
+    <div className="mt-4 mb-4">
+      <Button label="Contact Me" href={contactLink} />
+    </div>
     <ProfileLinks links={links} />
   </div>
 );

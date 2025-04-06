@@ -25,10 +25,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-muted-foreground min-h-screen flex flex-col`}
       >
-        {children}
+        <div className="flex-1">
+          {children}
+        </div>
+        <footer className="py-8 text-center text-sm text-muted">
+          2025 © Zeynab movasaqpour
+        </footer>
       </body>
     </html>
   );
 }
+
