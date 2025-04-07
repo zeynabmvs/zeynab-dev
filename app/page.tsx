@@ -4,7 +4,7 @@ import SkillsList from "@/app/components/Skills";
 import ExperienceCard from "@/app/components/Experience";
 import ProjectCard from "@/app/components/ProjectCard";
 import AboutMe from "@/app/components/AboutMe";
-import { profile, skills, experiences, projects, aboutMe } from "@/app/data/data";
+import { profile, skills, experiences, projects } from "@/app/data/data";
 
 export default function Home() {
   return (
@@ -15,10 +15,10 @@ export default function Home() {
           <SkillsList skills={skills} />
         </aside>    
         <main className="flex-1 space-y-8">
-          <AboutMe paragraphs={aboutMe.paragraphs} />
+          <AboutMe paragraphs={profile.aboutMe} />
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold">Projects</h2>
+            <h2 className="text-2xl font-bold">Featured Projects</h2>
             <div className="grid gap-4 md:grid-cols-2">
               {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />

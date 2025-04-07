@@ -5,14 +5,21 @@ type Skill = {
   icon: string;
 };
 
-type SkillsListProps = {
+type SkillsGroupType = {
+  languages: Skill[];
+  react: Skill[];
+  styling: Skill[];
+  tools: Skill[];
+};
+
+type SkillGroupProps = {
+  title: string;
   skills: Skill[];
 };
 
-const SkillsList: React.FC<SkillsListProps> = ({ skills }) => (
-  <div className="card p-6">
-    <h2 className="text-2xl font-bold mb-3">Skills</h2>
-
+const SkillGroup: React.FC<SkillGroupProps> = ({ title, skills }) => (
+  <div className="mb-6">
+    <h3 className="text-sm mb-3 capitalize">{title}</h3>
     <div className="flex flex-wrap gap-4">
       {skills.map((skill) => (
         <div
@@ -25,12 +32,22 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => (
             width={16}
             height={16}
           />
-          <span className="text-muted text-xs ">
+          <span className="text-muted text-xs">
             {skill.name}
           </span>
         </div>
       ))}
     </div>
+  </div>
+);
+
+const SkillsList: React.FC<{ skills: SkillsGroupType }> = ({ skills }) => (
+  <div className="card p-6">
+    <h2 className="text-2xl font-bold mb-6">Skills</h2>
+    
+    {Object.entries(skills).map(([category, skillList]) => (
+      <SkillGroup key={category} title={category} skills={skillList} />
+    ))}
   </div>
 );
 
