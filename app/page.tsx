@@ -1,4 +1,3 @@
-
 import { ProfileCard } from "@/app/components/ProfileCard";
 import SkillsList from "@/app/components/Skills";
 import ExperienceCard from "@/app/components/Experience";
@@ -13,8 +12,9 @@ export default function Home() {
         <aside className="md:w-[300px] flex-shrink-0 space-y-8">
           <ProfileCard {...profile} />
           <SkillsList skills={skills} />
-        </aside>    
+        </aside>
         <main className="flex-1 space-y-8">
+          {/* <Navigation /> */}
           <AboutMe paragraphs={profile.aboutMe} />
 
           <section className="space-y-4">
@@ -34,7 +34,6 @@ export default function Home() {
               ))}
             </div>
           </section>
-
         </main>
       </div>
     </div>
