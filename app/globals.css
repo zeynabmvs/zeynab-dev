@@ -14,7 +14,7 @@ body {
 
 @layer components {
   .card {
-    @apply border border-zinc-200 relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-clip bg-white;
+    @apply border border-zinc-200 relative rounded-xl sm:rounded-2xl overflow-clip bg-white;
   }
   .card-shadow {
     @apply hover:shadow-lg transition;

@@ -5,7 +5,7 @@ import Tag from "@/app/components/Tag";
 type ProjectCardProps = {
   title: string;
   description: string;
-  repoUrl: string; 
+  repoUrl: string;
   imageUrl: string;
   projectLangs: number[];
   tags: string[];
@@ -16,7 +16,7 @@ type ProjectCardProps = {
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  repoUrl, 
+  repoUrl,
   imageUrl,
   projectLangs,
   tags,
@@ -24,13 +24,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => (
   <article className="card card-shadow overflow-hidden flex flex-col h-full">
     <div className="relative w-full aspect-3/2">
-      <Image
-        src={imageUrl}
-        alt={`${title} preview`}
-        fill
-        className="object-cover transition-transform hover:scale-105"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      />
+      <a
+        href={liveSite || repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full h-full"
+      >
+        <Image
+          src={imageUrl}
+          alt={`${title} preview`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </a>
     </div>
     <div className="flex flex-col flex-grow p-5">
       <header>
