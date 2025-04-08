@@ -5,19 +5,22 @@ import Tag from "@/app/components/Tag";
 type ProjectCardProps = {
   title: string;
   description: string;
-  url: string;
+  repoUrl: string; 
   imageUrl: string;
   projectLangs: number[];
   tags: string[];
+  liveSite?: string;
+  priority?: number;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  url,
+  repoUrl, 
   imageUrl,
   projectLangs,
   tags,
+  liveSite,
 }) => (
   <article className="card card-shadow overflow-hidden flex flex-col h-full">
     <div className="relative w-full aspect-3/2">
@@ -33,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <header>
         <a
           className="inline-block font-semibold hover:text-primary hover:underline transition-colors"
-          href={url}
+          href={liveSite || repoUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -44,7 +47,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mt-4">
-          {tags.map((tag) => (
+          {tags.slice(0, 4).map((tag) => (
             <Tag key={tag} label={tag} />
           ))}
         </div>
@@ -52,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <div className="mt-auto pt-4 flex justify-end">
         <a
-          href={url}
+          href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-dark hover:underline transition-colors"
