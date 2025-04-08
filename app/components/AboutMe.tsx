@@ -1,4 +1,3 @@
-// About Me Component
 type AboutMeProps = {
   paragraphs: string[];
 };

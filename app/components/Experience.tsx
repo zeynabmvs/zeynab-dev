@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// Experience Card Component
 type ExperienceCardProps = {
   company: string;
   role: string;

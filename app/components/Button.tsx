@@ -1,4 +1,3 @@
-// Button Component
 type ButtonProps = { label: string; href: string };
 const Button: React.FC<ButtonProps> = ({ label, href }) => (
   <a
@@ -6,7 +5,7 @@ const Button: React.FC<ButtonProps> = ({ label, href }) => (
     target="_blank"
     className="
       inline-flex items-center justify-center w-full
-      rounded-md
+      rounded-full
       text-sm font-semibold
       bg-primary text-white
       hover:bg-primary/90 focus:ring-2 focus:ring-primary/20 focus:outline-none

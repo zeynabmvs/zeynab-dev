@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Button from "./Button";
+import Button from "@/app/components/Button";
 
-// Avatar Component
 type AvatarProps = { src: string; alt: string };
 const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
   <div className="relative w-12 h-12 md:w-24 md:h-24">
@@ -16,7 +15,6 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
   </div>
 );
 
-// Profile Header Component
 type ProfileHeaderProps = { name: string; role: string; avatar: string };
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   name,
@@ -32,13 +30,11 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   </div>
 );
 
-// Profile Bio Component
 type ProfileBioProps = { bio: string };
 const ProfileBio: React.FC<ProfileBioProps> = ({ bio }) => (
   <p className="mt-2 text-left text-xs md:text-sm text-muted">{bio}</p>
 );
 
-// Profile Links Component
 type ProfileLinksProps = {
   links: {
     href: string;
@@ -56,11 +52,11 @@ const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
         <a
           key={href}
           target="_blank"
-          className=" flex items-center gap-2 group "
+          className=" flex items-center gap-2 group"
           href={href}
         >
           {icon}
-          <p className="text-sm transition-colors duration-200 ease-in-out text-muted">
+          <p className="text-sm duration-200 ease-linear text-muted group-hover:text-primary">
             /{label}
           </p>
         </a>
@@ -68,7 +64,6 @@ const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
   </div>
 );
 
-// Profile Card Component
 type ProfileCardProps = {
   name: string;
   role: string;

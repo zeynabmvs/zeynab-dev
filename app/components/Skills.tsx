@@ -19,7 +19,7 @@ type SkillGroupProps = {
 
 const SkillGroup: React.FC<SkillGroupProps> = ({ title, skills }) => (
   <div className="mb-6">
-    <h3 className="text-sm mb-3 capitalize">{title}</h3>
+    <h3 className="text-sm mb-3 capitalize text-zinc-700">{title}</h3>
     <div className="flex flex-wrap gap-4">
       {skills.map((skill) => (
         <div

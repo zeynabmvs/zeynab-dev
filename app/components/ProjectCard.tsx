@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { languages } from "@/app/data/data";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import LanguageItem from "./LanguageItem";
+import LanguageItem from "@/app/components/LanguageItem";
 
-// Project Card Component
 type ProjectCardProps = {
   title: string;
   description: string;
