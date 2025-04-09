@@ -9,7 +9,7 @@ type ProjectCardProps = {
   imageUrl: string;
   projectLangs: number[];
   tags: string[];
-  techStack: number[]; // array of tech stack indices
+  techStack: number[];
   liveSite?: string;
   priority?: number;
 };
