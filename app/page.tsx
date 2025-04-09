@@ -12,7 +12,7 @@ export default function Home() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-[922px]">
+    <div className="container mx-auto px-4 py-8 max-w-screen-lg">
       <div className="flex flex-col md:flex-row gap-8">
         <aside className="md:w-[300px] flex-shrink-0 space-y-8">
           <ProfileCard {...profile} />
