@@ -12,14 +12,14 @@ type SkillsGroupType = {
   tools: Skill[];
 };
 
-const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => (
+const SkillItemWithIcon: React.FC<{ skill: Skill }> = ({ skill }) => (
   <div className="inline-flex items-center gap-1.5 rounded-full">
     <Image src={skill.icon} alt={`${skill.name} icon`} width={16} height={16} />
     <span className="text-muted text-xs">{skill.name}</span>
   </div>
 );
 
-const SkillItem2: React.FC<{ skill: Skill }> = ({ skill }) => (
+const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => (
   <div className="inline-flex items-center px-3 py-1 bg-zinc-100 rounded-full">
     <span className="text-primary text-xs">{skill.name}</span>
   </div>
@@ -33,7 +33,7 @@ const SkillsList: React.FC<{ skills: SkillsGroupType }> = ({ skills }) => {
       <h2 className="text-2xl font-bold mb-6">Skills</h2>
       <div className="flex flex-wrap gap-4">
         {allSkills.map((skill) => (
-          <SkillItem2 key={skill.name} skill={skill} />
+          <SkillItem key={skill.name} skill={skill} />
         ))}
       </div>
     </div>

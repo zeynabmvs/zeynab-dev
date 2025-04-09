@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import Tag from "@/app/components/Tag";
 import { TechStackList } from "@/app/components/TechStack";
 
 type ProjectCardProps = {
