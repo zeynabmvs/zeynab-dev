@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Tag from "@/app/components/Tag";
+import { TechStackList } from "@/app/components/TechStack";
 
 type ProjectCardProps = {
   title: string;
@@ -9,6 +10,7 @@ type ProjectCardProps = {
   imageUrl: string;
   projectLangs: number[];
   tags: string[];
+  techStack: number[]; // array of tech stack indices
   liveSite?: string;
   priority?: number;
 };
@@ -20,6 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   projectLangs,
   tags,
+  techStack,
   liveSite,
 }) => (
   <article className="card card-shadow overflow-hidden flex flex-col h-full">
@@ -51,16 +54,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </a>
         <p className="text-sm mt-2 text-muted">{description}</p>
       </header>
-
-      {tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mt-4">
-          {tags.slice(0, 4).map((tag) => (
-            <Tag key={tag} label={tag} />
-          ))}
-        </div>
-      )}
-
-      <div className="mt-auto pt-4 flex justify-end">
+      <div className="mt-auto pt-4 flex items-center justify-between">
+        {techStack && techStack.length > 0 && (
+          <TechStackList techStackIds={techStack} />
+        )}
         <a
           href={repoUrl}
           target="_blank"
