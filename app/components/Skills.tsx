@@ -29,7 +29,7 @@ const SkillsList: React.FC<{ skills: SkillsGroupType }> = ({ skills }) => {
   const allSkills = Object.values(skills).flat();
 
   return (
-    <div className="card p-6">
+    <div className="card p-4 md:p-6">
       <h2 className="text-2xl font-bold mb-6">Skills</h2>
       <div className="flex flex-wrap gap-4">
         {allSkills.map((skill) => (

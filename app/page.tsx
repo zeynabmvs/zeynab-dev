@@ -1,6 +1,6 @@
 import { ProfileCard } from "@/app/components/ProfileCard";
 import SkillsList from "@/app/components/Skills";
-import ExperienceCard from "@/app/components/Experience";
+import {ExperienceList} from "@/app/components/Experiences";
 import ProjectCard from "@/app/components/ProjectCard";
 import AboutMe from "@/app/components/AboutMe";
 import Navigation from "@/app/components/Navigation";
@@ -33,11 +33,12 @@ export default function Home() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold">Experience</h2>
-            <div className="grid gap-4">
+            {/* <div className="grid gap-4">
               {experiences.map((experience, index) => (
                 <ExperienceCard key={index} {...experience} />
               ))}
-            </div>
+            </div> */}
+            <ExperienceList experiences={experiences} />
           </section>
         </main>
       </div>

@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       </a>
     </div>
-    <div className="flex flex-col flex-grow p-5">
+    <div className="flex flex-col flex-grow p-4">
       <header>
         <a
           className="inline-block font-semibold hover:text-primary hover:underline transition-colors"
