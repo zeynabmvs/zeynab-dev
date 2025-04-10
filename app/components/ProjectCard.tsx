@@ -31,6 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full h-full"
+        title="Visit live site"
       >
         <Image
           src={imageUrl}
@@ -48,6 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           href={liveSite || repoUrl}
           target="_blank"
           rel="noopener noreferrer"
+          title="Visit live site"
         >
           {title}
         </a>

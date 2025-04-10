@@ -1,17 +1,30 @@
 import React from "react";
 import Image from "next/image";
-import { techStacks } from "../data/constants";
+import { techStacks } from "@/app/data/constants";
 
 type TechStackItemProps = {
   label: string;
-  icon: React.ReactNode;
+  icon: string;
 };
 
 const TechStackItem: React.FC<TechStackItemProps> = ({ label, icon }) => {
   return (
-    <div className="transition-transform -ml-2 first:ml-0" role="listitem">
-      <div className="w-[40px] h-[40px] rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center bg-white">
-        {icon}
+    <div
+      className="transition-transform -ml-2 first:ml-0 cursor-pointer relative group"
+      role="listitem"
+    >
+      <div className="w-[36px] h-[36px] rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center bg-white">
+        <Image src={icon} alt={label} width={18} height={18} />
+      </div>
+
+      <div
+        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+               bg-zinc-50 text-zinc-500 border rounded-full border-zinc-300 text-sm
+              px-3 py-1 shadow-lg whitespace-nowrap z-10
+              invisible opacity-0 group-hover:visible group-hover:opacity-100
+              transition-opacity delay-200 duration-200"
+      >
+        {label}
       </div>
     </div>
   );
@@ -31,24 +44,12 @@ export const TechStackList: React.FC<TechStackListProps> = ({
       role="list"
       aria-label="Technology stack"
     >
-      {techStackIds.map((id) => {
+      {techStackIds.slice(0, 6).map((id) => {
         const stack = techStacks[id];
         if (!stack) return null;
 
         return (
-          <TechStackItem
-            key={stack.id}
-            label={stack.label}
-            icon={
-              <Image
-                src={stack.icon}
-                alt={stack.label}
-                width={22}
-                height={22}
-                // className="size-5"
-              />
-            }
-          />
+          <TechStackItem key={stack.id} label={stack.label} icon={stack.icon} />
         );
       })}
     </div>
