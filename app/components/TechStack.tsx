@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { techStacks } from "@/app/data/constants";
+import { techStacks } from "@/app/lib/constants";
 
 type TechStackItemProps = {
   label: string;

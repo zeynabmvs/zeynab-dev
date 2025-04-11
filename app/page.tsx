@@ -4,7 +4,7 @@ import { ExperienceList } from "@/app/components/Experiences";
 import ProjectCard from "@/app/components/ProjectCard";
 import AboutMe from "@/app/components/AboutMe";
 import Navigation from "@/app/components/Navigation";
-import { profile, skills, experiences, projects } from "@/app/data/data.js";
+import { profile, skills, experiences, projects } from "@/app/lib/data.js";
 
 export default function Home() {
   const sortedProjects = [...projects].sort(

@@ -1,5 +1,5 @@
-import { headerLinks } from "@/app/data/data";
 import Link from "next/link";
+import { headerLinks } from "@/app/lib/data";
 
 export default function Navigation() {
   return (

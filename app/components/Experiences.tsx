@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
 type ExperienceCardProps = {
