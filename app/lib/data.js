@@ -298,7 +298,7 @@ export const projects = [
     description:
       "A personal GitHub profile showcasing projects and contributions.",
     repoUrl: "https://github.com/zeynabmvs/github-profile",
-    imageUrl: "/projects/github-profile.jpg",
+    imageUrl: "/projects/github-profile.png",
     projectLangs: [3, 2, 1],
     tags: ["JavaScript", "GitHub", "Responsive"],
     liveSite: "",

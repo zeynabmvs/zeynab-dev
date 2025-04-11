@@ -9,8 +9,11 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
       className="rounded-full object-cover border border-zinc-500"
       src={src}
       alt={alt}
-      fill
-      sizes="(max-width: 768px) 48px, 96px"
+      width={96}
+      height={96}
+      // fill
+      // quality={100}
+      // sizes="(max-width: 768px) 48px, 96px"
     />
   </div>
 );
