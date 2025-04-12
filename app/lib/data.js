@@ -64,31 +64,14 @@ export const profile = {
     },
   ],
   aboutMe: [
-    "Hi, I’m Zeynab — a web developer with over five years of experience in web development. I’ve worked on a variety of projects, both solo and in teams, and I’m always looking for new challenges that push me to grow and learn.",
-
-    "Over the past several months, I’ve been diving deep into modern frontend tools like React, Next.js, and TypeScript by building open-source projects. I love creating clean, user-friendly interfaces and finding smart ways to automate repetitive tasks.",
+    "Hi, I’m Zeynab — a web developer with over four years of experience in web development. I’ve worked on a variety of projects, both solo and in teams, and I’m always looking for new challenges that push me to grow and learn.",
+    "Over the past 9+ months, I’ve been diving deep into modern frontend tools like React, Next.js, and TypeScript by building open-source projects. I love creating clean, user-friendly interfaces and finding smart ways to automate repetitive tasks.",
+    "I’ve been collaborating on practice projects in a frontend team, where I contributed as both a coder and code reviewer. Through this experience, I developed the soft skills of a developer — improving communication, collaboration, and team workflow.",
+    "Moving forward, I’m excited to join a supportive team where I can continue to grow and make a real impact through the products I help create.",
   ],
 };
 
 export const skills = {
-  languages: [
-    {
-      name: "HTML",
-      icon: "/tools/html5.svg",
-    },
-    {
-      name: "CSS",
-      icon: "/tools/css3.svg",
-    },
-    {
-      name: "JavaScript",
-      icon: "/tools/javascript.svg",
-    },
-    {
-      name: "TypeScript",
-      icon: "/tools/typescript.svg",
-    },
-  ],
   react: [
     {
       name: "React",
@@ -110,6 +93,52 @@ export const skills = {
       name: "React Query",
       icon: "/tools/react-query.svg",
     },
+    // {
+    //   name: "SSR",
+    //   label: "/tools/figma.svg",
+    // },
+    // {
+    //   name: "SSG",
+    //   label: "/tools/figma.svg",
+    // },
+    // {
+    //   name: "React Server Actions",
+    //   label: "/tools/figma.svg",
+    // },
+  ],
+  languages: [
+    {
+      name: "HTML",
+      icon: "/tools/html5.svg",
+    },
+    {
+      name: "CSS",
+      icon: "/tools/css3.svg",
+    },
+    {
+      name: "JavaScript",
+      icon: "/tools/javascript.svg",
+    },
+    {
+      name: "TypeScript",
+      icon: "/tools/typescript.svg",
+    },
+    {
+      name: "Web Performance",
+      label: "/tools/figma.svg",
+    },
+    {
+      name: "Accessibility",
+      label: "/tools/figma.svg",
+    },
+        {
+      name: "Sass",
+      label: "/tools/sass.svg",
+    },
+    // {
+    //   name: "Core Web Vitals",
+    //   label: "/tools/figma.svg",
+    // },
   ],
   styling: [
     {
@@ -146,6 +175,34 @@ export const skills = {
       name: "Figma",
       icon: "/tools/figma.svg",
     },
+  ],
+  soft: [
+    {
+      name: "Team Collaboraiotn",
+      label: "/tools/figma.svg",
+    },
+    // {
+    //   name: "Problem Solving",
+    //   label: "/tools/figma.svg",
+    // },
+    // {
+    //   name: "Critical thinking",
+    //   label: "/tools/figma.svg",
+    // },
+    // {
+    //   name: "Conflict Management",
+    //   label: "/tools/figma.svg",
+    // },
+  ],
+  designPattern: [
+    // {
+    //   name: "SOLID",
+    //   label: "/tools/figma.svg",
+    // },
+    // {
+    //   name: "Design Thinking",
+    //   label: "/tools/figma.svg",
+    // },
   ],
 };
 
@@ -189,7 +246,7 @@ export const experiences = [
       "Worked in a cross-functional team to develop backend services and APIs for Android apps using Django REST Framework.",
     responsibilities: [
       "Developed RESTful APIs with Django REST Framework for mobile and web clients.",
-      "Built systems for an English learning platform, a quiz game, and an artist-student educational app. **",
+      "Built systems for an English learning platform, a quiz game, and an artist-student educational app.",
       "Worked closely with Android developers to ensure efficient data exchange.",
       "Used Swagger and SwapAPI for professional API documentation and testing.",
       "Managed and optimized PostgreSQL and MySQL databases.",
@@ -290,7 +347,7 @@ export const projects = [
       "Web Development",
     ],
     liveSite: "https://zeynabmvs.github.io/acme_landing/",
-    priority: 5,
+    priority: 0,
     techStack: [0, 1, 2],
   },
   {
