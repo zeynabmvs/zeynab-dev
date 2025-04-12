@@ -3,7 +3,7 @@ type AboutMeProps = {
 };
 
 const AboutMe: React.FC<AboutMeProps> = ({ paragraphs }) => (
-  <div className="card p-6 pb-8">
+  <div className="card p-4 md:p-6 pb-8">
     <h2 className="text-2xl font-bold mb-4">About Me</h2>
     {paragraphs.map((paragraph, index) => (
       <p

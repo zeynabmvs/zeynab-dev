@@ -23,7 +23,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   responsibilities,
   priority,
 }) => (
-  <div className="p-4 flex gap-4 not-last:border-b border-zinc-300">
+  <div className="flex gap-4 not-last:border-b border-zinc-300 pb-4">
     {/* <div className="flex-shrink-0 relative w-16 h-16">
       <Image
         src={imageUrl}
@@ -56,7 +56,7 @@ const ExperienceList: React.FC<ExperienceProps> = ({ experiences }) => {
     .sort((a, b) => b.priority - a.priority);
 
   return (
-    <div className="card grid gap-4 p-6">
+    <div className="card space-y-6 p-4 md:p-6">
       {sortedExperiences.map((exp, index) => (
         <ExperienceCard key={index} {...exp} />
       ))}

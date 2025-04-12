@@ -4,21 +4,20 @@ import Button from "@/app/components/Button";
 
 type AvatarProps = { src: string; alt: string };
 const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
-  <div className="relative w-12 h-12 md:w-24 md:h-24">
+  <div className="relative size-24 md:size-36 lg:mx-auto">
     <Image
-      className="rounded-full object-cover border border-zinc-500"
+      className="rounded-full object-cover border border-zinc-100"
       src={src}
       alt={alt}
-      width={96}
-      height={96}
-      // fill
-      // quality={100}
-      // sizes="(max-width: 768px) 48px, 96px"
+      width={300}
+      height={300}
+      unoptimized={true}
     />
   </div>
 );
 
 type ProfileHeaderProps = { name: string; role: string; avatar: string };
+
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   name,
   role,
@@ -28,14 +27,15 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     <Avatar src={avatar} alt={`${name}'s profile`} />
     <div className="flex flex-col items-start">
       <h1 className="md:mt-2 text-lg md:text-xl font-bold">{name}</h1>
-      <p className="text-xs md:text-sm font-medium text-muted">{role}</p>
+      <p className="text-sm font-medium text-muted">{role}</p>
     </div>
   </div>
 );
 
 type ProfileBioProps = { bio: string };
+
 const ProfileBio: React.FC<ProfileBioProps> = ({ bio }) => (
-  <p className="mt-2 text-left text-xs md:text-sm text-muted">{bio}</p>
+  <p className="mt-2 text-left text-sm text-muted">{bio}</p>
 );
 
 type ProfileLinksProps = {
@@ -89,7 +89,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   contactLink,
   links,
 }) => (
-  <div className="card p-4 md:p-6">
+  <div className="card p-4 md:p-6 md:flex-2/3">
     <ProfileHeader name={name} role={role} avatar={avatar} />
     <ProfileBio bio={bio} />
     <div className="mt-4 mb-4">

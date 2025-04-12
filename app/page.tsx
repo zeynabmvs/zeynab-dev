@@ -15,8 +15,8 @@ export default function Home() {
     <div className="container mx-auto px-4 py-8 max-w-screen-lg space-y-6">
       {/* <Navigation /> */}
 
-      <div className="flex flex-col md:flex-row gap-8">
-        <aside className="md:w-[300px] flex-shrink-0 space-y-8">
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        <aside className="lg:w-[300px] flex-shrink-0 flex flex-col gap-8 md:flex-row lg:flex-col justify-start">
           <ProfileCard {...profile} />
           <SkillsList skills={skills} />
         </aside>
@@ -25,7 +25,7 @@ export default function Home() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold">Featured Projects</h2>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {sortedProjects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
               ))}
@@ -34,11 +34,6 @@ export default function Home() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold">Experience</h2>
-            {/* <div className="grid gap-4">
-              {experiences.map((experience, index) => (
-                <ExperienceCard key={index} {...experience} />
-              ))}
-            </div> */}
             <ExperienceList experiences={experiences} />
           </section>
         </main>
