@@ -95,15 +95,15 @@ export const skills = {
     },
     // {
     //   name: "SSR",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
     // {
     //   name: "SSG",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
     // {
     //   name: "React Server Actions",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
   ],
   languages: [
@@ -125,19 +125,19 @@ export const skills = {
     },
     {
       name: "Web Performance",
-      label: "/tools/figma.svg",
+      icon: "/tools/figma.svg",
     },
     {
       name: "Accessibility",
-      label: "/tools/figma.svg",
+      icon: "/tools/figma.svg",
     },
         {
       name: "Sass",
-      label: "/tools/sass.svg",
+      icon: "/tools/sass.svg",
     },
     // {
     //   name: "Core Web Vitals",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
   ],
   styling: [
@@ -179,33 +179,34 @@ export const skills = {
   soft: [
     {
       name: "Team Collaboraiotn",
-      label: "/tools/figma.svg",
+      icon: "/tools/figma.svg",
     },
     // {
     //   name: "Problem Solving",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
     // {
     //   name: "Critical thinking",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
     // {
     //   name: "Conflict Management",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
   ],
   designPattern: [
     // {
     //   name: "SOLID",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
     // {
     //   name: "Design Thinking",
-    //   label: "/tools/figma.svg",
+    //   icon: "/tools/figma.svg",
     // },
   ],
 };
 
+// Set priority to 0 to exclude in UI
 export const experiences = [
   {
     title: "Open Source & Team Projects",
@@ -257,6 +258,7 @@ export const experiences = [
   },
 ];
 
+// Set priority to 0 to exclude in UI
 export const projects = [
   {
     title: "Podcraft",
