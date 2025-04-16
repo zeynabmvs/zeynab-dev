@@ -10,8 +10,8 @@ type ProjectCardProps = {
   projectLangs: number[];
   tags: string[];
   techStack: number[];
-  liveSite?: string;
-  priority?: number;
+  liveSite: string;
+  priority: number;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -73,4 +73,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   </article>
 );
 
-export default ProjectCard;
+
+type ProjectListProps = {
+  projects: ProjectCardProps[];
+};
+
+
+const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
+
+const sortedProjects = projects
+.filter((item) => item.priority > 0)
+.sort((a, b) => a.priority - b.priority);
+
+
+return (
+  <div className="grid gap-6 md:grid-cols-2">
+    {sortedProjects.map((project, index) => (
+      <ProjectCard key={index} {...project} />
+    ))}
+  </div>
+);
+};
+
+
+export default ProjectList;

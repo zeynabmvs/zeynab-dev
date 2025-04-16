@@ -1,16 +1,11 @@
 import { ProfileCard } from "@/app/components/ProfileCard";
 import SkillsList from "@/app/components/Skills";
 import { ExperienceList } from "@/app/components/Experiences";
-import ProjectCard from "@/app/components/ProjectCard";
 import AboutMe from "@/app/components/AboutMe";
-import Navigation from "@/app/components/Navigation";
 import { profile, skills, experiences, projects } from "@/app/lib/data.js";
+import ProjectList from "@/app/components/Projects";
 
 export default function Home() {
-  const sortedProjects = [...projects].sort(
-    (a, b) => (a.priority || 0) - (b.priority || 0)
-  );
-
   return (
     <div className="container mx-auto px-4 py-8 max-w-screen-lg space-y-6">
       {/* <Navigation /> */}
@@ -25,11 +20,7 @@ export default function Home() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold">Featured Projects</h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              {sortedProjects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
-              ))}
-            </div>
+            <ProjectList projects={projects} />
           </section>
 
           <section className="space-y-4">
