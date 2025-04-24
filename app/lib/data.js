@@ -1,7 +1,7 @@
 export const profile = {
   name: "Zeynab Moosavqpour",
   role: "Web Developer",
-  avatar: "/avatar.jpeg",
+  avatar: "https://avatars.githubusercontent.com/u/30770159?v=4",
   bio: "Web developer with a solid background in backend and WordPress development, currently focused on building modern, scalable interfaces using React, TypeScript, and Next.js.",
   contactLink: "mailto:zeynab.mvs@gmail.com",
   links: [
