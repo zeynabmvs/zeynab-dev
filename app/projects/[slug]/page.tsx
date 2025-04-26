@@ -3,6 +3,7 @@ import Image from "next/image";
 import { projects } from "@/app/lib/data";
 import { TagsList } from "@/app/components/Tags";
 import { TechStackList } from "@/app/components/TechStack";
+import { Metadata } from "next";
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLeftIcon,
@@ -12,6 +13,21 @@ import Link from "next/link";
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+// Generate metadata for the page
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const project = projects.find(
+    (p) => p.title.toLowerCase().replace(/\s+/g, "-") === params.slug
+  );
+
+  return {
+    title: project ? `${project.title} | Project Details` : "Project Not Found",
+  };
+}
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
@@ -106,7 +122,7 @@ async function ProjectPage({ params }: Props) {
         className="inline-flex items-center gap-2 text-sm text-muted hover:text-primary mb-8"
       >
         <ArrowLeftIcon className="w-4 h-4" />
-        Back to projects
+        Back to home
       </Link>
 
       <article className="space-y-12">
