@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { projects } from "@/app/lib/data";
+import { projects } from "@/app/lib/projects";
 import { TagsList } from "@/app/components/Tags";
 import { TechStackList } from "@/app/components/TechStack";
 import { Metadata } from "next";
@@ -15,13 +15,11 @@ type Props = {
 };
 
 // Generate metadata for the page
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
   const project = projects.find(
-    (p) => p.title.toLowerCase().replace(/\s+/g, "-") === params.slug
+    (p) => p.title.toLowerCase().replace(/\s+/g, "-") === slug
   );
 
   return {
@@ -48,73 +46,6 @@ async function ProjectPage({ params }: Props) {
     notFound();
   }
 
-  // Placeholder data for missing sections
-  const placeholderData = {
-    tagline: "Building the future of digital experiences",
-    purpose: {
-      problem:
-        "Users needed a more efficient way to manage and organize their digital content while maintaining a smooth, intuitive experience.",
-      solution:
-        "Created a modern web application that simplifies content management through an intuitive interface and powerful features.",
-      impact:
-        "Helping users save time and reduce complexity in their daily workflows.",
-    },
-    goals: [
-      {
-        title: "User Experience",
-        description:
-          "Create an intuitive and responsive interface that makes complex tasks feel simple",
-      },
-      {
-        title: "Performance",
-        description:
-          "Ensure fast load times and smooth interactions across all devices",
-      },
-      {
-        title: "Scalability",
-        description:
-          "Build a foundation that can easily accommodate new features and growing user base",
-      },
-      {
-        title: "Accessibility",
-        description:
-          "Make the application usable for everyone, following WCAG guidelines",
-      },
-    ],
-    role: {
-      title: "Frontend Developer",
-      responsibilities: [
-        "Built frontend interface using React and modern web technologies",
-        "Implemented responsive design and animations",
-        "Integrated with backend APIs",
-        "Collaborated with design and backend teams",
-      ],
-    },
-    challenges: [
-      {
-        challenge: "Complex state management across components",
-        solution:
-          "Implemented efficient state management using React hooks and context",
-      },
-      {
-        challenge: "Performance optimization for large datasets",
-        solution: "Applied pagination, virtualization, and caching strategies",
-      },
-    ],
-    learnings: [
-      "Deepened understanding of React component architecture",
-      "Improved TypeScript skills and type safety practices",
-      "Gained experience with modern build tools and deployment",
-      "Enhanced collaboration skills through team-based development",
-    ],
-    nextSteps: [
-      "Implement user authentication and profiles",
-      "Add more interactive features",
-      "Optimize performance and accessibility",
-      "Expand test coverage",
-    ],
-  };
-
   return (
     <div className="container mx-auto px-4 py-8 max-w-screen-lg">
       <Link
@@ -129,7 +60,7 @@ async function ProjectPage({ params }: Props) {
         {/* Header */}
         <header className="space-y-4">
           <h1 className="text-4xl font-bold">{project.title}</h1>
-          <p className="text-xl text-muted italic">{placeholderData.tagline}</p>
+          <p className="text-xl text-muted italic">{project.tagline}</p>
         </header>
 
         {/* Purpose */}
@@ -138,15 +69,15 @@ async function ProjectPage({ params }: Props) {
           <div className="grid gap-6 md:grid-cols-3">
             <div className="space-y-2">
               <h3 className="text-lg font-medium">The Problem</h3>
-              <p className="text-muted">{placeholderData.purpose.problem}</p>
+              <p className="text-muted">{project.purpose.problem}</p>
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">The Solution</h3>
-              <p className="text-muted">{placeholderData.purpose.solution}</p>
+              <p className="text-muted">{project.purpose.solution}</p>
             </div>
             <div className="space-y-2">
               <h3 className="text-lg font-medium">The Impact</h3>
-              <p className="text-muted">{placeholderData.purpose.impact}</p>
+              <p className="text-muted">{project.purpose.impact}</p>
             </div>
           </div>
         </section>
@@ -196,9 +127,9 @@ async function ProjectPage({ params }: Props) {
         {/* My Role */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">My Role</h2>
-          <p className="text-lg font-medium">{placeholderData.role.title}</p>
+          <p className="text-lg font-medium">{project.role.title}</p>
           <ul className="list-disc list-inside space-y-2 text-muted">
-            {placeholderData.role.responsibilities.map((item, index) => (
+            {project.role.responsibilities.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
@@ -217,7 +148,7 @@ async function ProjectPage({ params }: Props) {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Challenges & Solutions</h2>
           <div className="space-y-6">
-            {placeholderData.challenges.map((item, index) => (
+            {project.challenges.map((item, index) => (
               <div key={index} className="space-y-2">
                 <h3 className="text-lg font-medium">Challenge:</h3>
                 <p className="text-muted">{item.challenge}</p>
@@ -232,7 +163,7 @@ async function ProjectPage({ params }: Props) {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">What I Learned</h2>
           <ul className="list-disc list-inside space-y-2 text-muted">
-            {placeholderData.learnings.map((item, index) => (
+            {project.learnings.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
@@ -242,7 +173,7 @@ async function ProjectPage({ params }: Props) {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">What's Next</h2>
           <ul className="list-disc list-inside space-y-2 text-muted">
-            {placeholderData.nextSteps.map((item, index) => (
+            {project.nextSteps.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
