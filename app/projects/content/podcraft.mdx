@@ -1,0 +1,190 @@
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { TagsList } from "@/app/components/Tags";
+import { TechStackList } from "@/app/components/TechStack";
+import { Metadata } from "next";
+import {
+  ArrowTopRightOnSquareIcon,
+  ArrowLeftIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+
+{/* Header */}
+
+<header className="space-y-4">
+  <h1 className="text-4xl font-bold">Podcraft</h1>
+  <p className="text-xl text-muted italic">
+    Building the future of AI-powered podcast experience
+  </p>
+</header>
+
+{/* Purpose */}
+
+<section className="space-y-6">
+  <h2 className="text-2xl font-semibold">Purpose & Goals</h2>
+  <div className="grid gap-6 md:grid-cols-3">
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">The Problem</h3>
+      <p className="text-muted">
+        Users need a more engaging and personalized way to discover and consume
+        podcast content while managing their playlists effectively.
+      </p>
+    </div>
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">The Solution</h3>
+      <p className="text-muted">
+        Created an AI-powered platform that enhances podcast discovery and
+        management through intuitive interfaces and smart features.
+      </p>
+    </div>
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">The Impact</h3>
+      <p className="text-muted">
+        Helping podcast enthusiasts save time in finding relevant content and
+        managing their listening experience more efficiently.
+      </p>
+    </div>
+  </div>
+</section>
+
+{/* Overview */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">Overview</h2>
+  <p className="text-lg text-muted">An AI-powered podcast platform with seamless playback and playlist management.</p>
+
+  <div className="flex flex-wrap gap-4 pt-4">
+    <a
+      href="https://podcraft-roan.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-primary text-white hover:bg-primary/90"
+    >
+      View Live Site
+      <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+    </a>
+    <a
+      href="https://github.com/zeynabmvs/podcraft"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-zinc-200 hover:bg-zinc-50"
+    >
+      View Source
+      <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+    </a>
+  </div>
+</section>
+
+{/* Project Image */}
+
+<section>
+  <div className="relative w-full aspect-video rounded-xl overflow-hidden">
+    <Image
+      src="/projects/podcraft.png"
+      alt="Podcraft preview"
+      fill
+      className="object-cover"
+      sizes="(max-width: 1200px) 100vw, 1200px"
+    />
+  </div>
+</section>
+
+{/* My Role */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">My Role</h2>
+  <p className="text-lg font-medium">Frontend Developer</p>
+  <ul className="list-disc list-inside space-y-2 text-muted">
+    <li>Implemented the frontend interface using Next.js and TypeScript</li>
+    <li>Integrated AI features using OpenAI API</li>
+    <li>Set up authentication and database with Clerk and Convex</li>
+    <li>Created responsive layouts and animations</li>
+    <li>Followed git workflow best practices</li>
+  </ul>
+</section>
+
+{/* Technologies */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">Tools & Technologies</h2>
+  <div className="space-y-4">
+    <TechStackList techStackIds={[5, 3, 17, 18, 9, 21, 22, 19]} />
+    <TagsList
+      tags={[
+        "Next.js",
+        "Tailwind CSS",
+        "Convex",
+        "Clerk",
+        "OpenAI API",
+        "AI",
+        "Podcast",
+        "Web Application",
+        "Typescript",
+        "gitflow",
+        "vercel",
+      ]}
+      count={11}
+    />
+  </div>
+</section>
+
+{/* Challenges & Solutions */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">Challenges & Solutions</h2>
+  <div className="space-y-6">
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">Challenge:</h3>
+      <p className="text-muted">Complex state management for audio playback</p>
+      <h3 className="text-lg font-medium">Solution:</h3>
+      <p className="text-muted">
+        Implemented custom hooks and context for managing player state
+      </p>
+    </div>
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">Challenge:</h3>
+      <p className="text-muted">AI integration complexity</p>
+      <h3 className="text-lg font-medium">Solution:</h3>
+      <p className="text-muted">
+        Created modular API endpoints and error handling for OpenAI integration
+      </p>
+    </div>
+  </div>
+</section>
+
+{/* What I Learned */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">What I Learned</h2>
+  <ul className="list-disc list-inside space-y-2 text-muted">
+    <li>Gained experience with AI API integration</li>
+    <li>Improved TypeScript and Next.js skills</li>
+    <li>Learned about audio handling in web applications</li>
+    <li>Enhanced understanding of authentication flows</li>
+    <li>Practiced modern git workflows</li>
+  </ul>
+</section>
+
+{/* What's Next */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">What's Next</h2>
+  <ul className="list-disc list-inside space-y-2 text-muted">
+    <li>Add more AI-powered features</li>
+    <li>Implement social sharing capabilities</li>
+    <li>Enhance recommendation system</li>
+    <li>Add offline support</li>
+  </ul>
+</section>
+
+{/* Final Thoughts */}
+
+<section className="space-y-4">
+  <h2 className="text-2xl font-semibold">Final Thoughts</h2>
+  <blockquote className="border-l-4 border-primary pl-4 italic text-muted">
+    This project showcased my ability to build modern, user-focused web
+    applications while working collaboratively in a team environment. I'm proud
+    of the results and would love to discuss the technical decisions and
+    learning experiences in more detail.
+  </blockquote>
+</section>
