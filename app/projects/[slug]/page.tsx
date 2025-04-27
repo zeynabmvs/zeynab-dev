@@ -28,43 +28,43 @@ type Props = {
 // }
 
 // Return a list of `params` to populate the [slug] dynamic segment
-// export async function generateStaticParams() {
-//   return projects.map((project) => ({
-//     slug: project.title.toLowerCase().replace(/\s+/g, "-"),
-//   }));
-// }
+export async function generateStaticParams() {
+  const { projects } = await import("@/app/lib/data.js");
+
+  return projects.map((project) => ({
+    slug: project.title.toLowerCase().replace(/\s+/g, "-"),
+  }));
+}
 
 // Page component
 async function ProjectPage({ params }: Props) {
   const { slug } = await params;
 
-  const { default: Project } = await import(`@/app/projects/content/${slug}.mdx`)
+  try {
+    const { default: Project } = await import(
+      `@/app/projects/content/${slug}.mdx`
+    );
 
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-screen-lg">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-muted hover:text-primary mb-8"
+        >
+          <ArrowLeftIcon className="w-4 h-4" />
+          Back to home
+        </Link>
 
-  // const project = projects.find(
-  //   (p) => p.title.toLowerCase().replace(/\s+/g, "-") === slug
-  // );
-
-  // if (!project) {
-  //   notFound();
-  // }
-
-  return (
-    <div className="container mx-auto px-4 py-8 max-w-screen-lg">
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 text-sm text-muted hover:text-primary mb-8"
-      >
-        <ArrowLeftIcon className="w-4 h-4" />
-        Back to home
-      </Link>
-
-      <article className="space-y-12">
-        <Project />
-      </article>
-    </div>
-  );
+        <article className="space-y-12">
+          <Project />
+        </article>
+      </div>
+    );
+  } catch (error) {
+    // This will catch cases where the MDX file doesn't exist
+    notFound();
+  }
 }
 
 export default ProjectPage;
-export const dynamicParams = false
+export const dynamicParams = false;
