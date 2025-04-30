@@ -283,6 +283,7 @@ export const projects = [
     liveSite: "https://podcraft-roan.vercel.app/",
     priority: 1,
     techStack: [5, 3, 17, 18, 9, 21, 22, 19],
+    hasDetailsPage: false
   },
   {
     title: "Recipedia",
@@ -301,6 +302,7 @@ export const projects = [
     liveSite: "https://food-recipe-react-dun.vercel.app/",
     priority: 2,
     techStack: [4, 26, 9, 15],
+    hasDetailsPage: false
   },
   {
     title: "Kanba",
@@ -312,6 +314,7 @@ export const projects = [
     liveSite: "https://kanba-hazel.vercel.app/",
     priority: 1,
     techStack: [4, 7, 10, 19],
+    hasDetailsPage: true
   },
   {
     title: "World Ranks",
@@ -334,6 +337,7 @@ export const projects = [
     liveSite: "https://zeynabmvs.github.io/world-ranks/",
     priority: 2,
     techStack: [4, 9, 8, 15, 26],
+    hasDetailsPage: false
   },
   {
     title: "Acme Landing",
@@ -351,6 +355,7 @@ export const projects = [
     liveSite: "https://zeynabmvs.github.io/acme_landing/",
     priority: 0,
     techStack: [0, 1, 2],
+    hasDetailsPage: false
   },
   {
     title: "GitHub Profile",
@@ -364,6 +369,7 @@ export const projects = [
     priority: 3,
     techStack: [4, 9, 15],
     liveSite: "https://github-profile-olive-phi.vercel.app",
+    hasDetailsPage: false
   },
   {
     title: "Cafe Store",
@@ -383,6 +389,7 @@ export const projects = [
     liveSite: "https://nextjs-cafe-store.vercel.app/",
     priority: 3,
     techStack: [5, 11, 3, 9, 19],
+    hasDetailsPage: false
   },
 ];
 
