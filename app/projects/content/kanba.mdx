@@ -1,0 +1,112 @@
+import { Section, Header, ProjectLinks } from "@/app/components/mdx";
+import Image from "next/image";
+
+# Kanba
+
+A Kanban-style task management app for organizing workflows.
+
+<Section>
+  <Header>Overview</Header>
+  
+Kanba is a project where I challenged myself to build a simple, usable Kanban board — without following a ready-made design system.
+Instead, I studied real-world tools like Trello and Jira, gathered inspiration, and applied my knowledge of frontend technologies to recreate a functional, minimal Kanban experience.
+
+The goal wasn't to reinvent task management, but to turn learning into action — building something real while deepening my understanding of UI architecture, state management, and modern React development.
+
+</Section>
+
+<Section>
+
+<ProjectLinks githubRepo="https://github.com/zeynabmvs/kanba" liveSite="https://kanba-hazel.vercel.app/" />
+</Section>
+
+<Section>
+
+<div className="flex flex-col gap-4 md:flex-row">
+  <figure className="flex flex-col items-center">
+    <img
+      src="/projects/kanba-light.png"
+      alt="Light mode board view"
+      className="rounded-md object-cover"
+    />
+    <figcaption className="text-sm text-gray-500 mt-2">
+      Light Mode Board View
+    </figcaption>
+  </figure>
+  <figure className="flex flex-col items-center">
+    <img
+      src="/projects/kanba.png"
+      alt="Dark mode board view"
+      className="rounded-md object-cover"
+    />
+    <figcaption className="text-sm text-gray-500 mt-2">
+      Dark Mode Board View
+    </figcaption>
+  </figure>
+</div>
+
+</Section>
+
+<Section>
+  <Header>Technologies</Header>
+
+- **React** — Core frontend framework
+- **Redux Toolkit** — For state management
+- **Material-UI (MUI)** — For fast, consistent component styling
+- **Vite** — For a fast and efficient development environment
+- **React Router** — For page navigation
+- **hello-pangea/dnd** — For intuitive drag-and-drop
+- **LocalStorage API** — To persist data between sessions
+- **React Hook Form & Zod** — For form validation
+
+</Section>
+
+<Section>
+  <Header>Key Features</Header>
+
+- Minimal & clean Kanban board layout
+- Light and Dark mode toggle
+- Create, move, and delete tasks, lists and boards
+- Smooth drag-and-drop functionality
+- State persistence with LocalStorage
+- Fully responsive across different screen sizes
+
+</Section>
+
+<Section>
+
+<figure className="flex flex-col items-center">
+  <img
+    src="/projects/kanba-list.gif"
+    alt="New list"
+    className="rounded-md object-cover"
+  />
+  <figcaption className="text-sm text-gray-500 mt-2">
+    Create new list & drag and drop
+  </figcaption>
+</figure>
+
+</Section>
+
+<Section>
+  <Header>What I Learned</Header>
+
+- **State Management at Scale**, Implementing Redux helped me manage complex UI interactions and keep the app scalable and predictable.
+- **UI/UX Principles**, Without a pre-made design file, I learned to think like a product designer — focusing on simplicity, clarity, and usability.
+- **Theming and Customization**, Working with MUI, I learned how to implement dynamic light/dark themes and customize component styles beyond defaults.
+- **Drag-and-Drop**, Implementing DnD taught me how to enhance user experience with natural, touch-friendly interactions.
+- **Performance Considerations**, Building without a backend pushed me to optimize local state management and client-side storage.
+
+</Section>
+
+<Section>
+  <Header>Reflection</Header>
+
+Kanba is a clear reminder that learning by building is the fastest way to grow
+as a developer. Rather than focusing on every possible feature, I focused on the
+essentials — delivering a minimal, polished app where every detail was an opportunity
+to practice and learn. It strengthened not just my React and Redux skills, but
+also my ability to think critically about user experience, design, and product
+development.
+
+</Section>
