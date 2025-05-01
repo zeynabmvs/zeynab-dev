@@ -1,14 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-
-import { TagsList } from "@/app/components/Tags";
-import { TechStackList } from "@/app/components/TechStack";
-import { Metadata } from "next";
-import {
-  ArrowTopRightOnSquareIcon,
-  ArrowLeftIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { overrideComponents } from "@/app/components/mdx";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -29,11 +22,13 @@ type Props = {
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-  const { projects } = await import("@/app/lib/data.js");
+  // const { projects } = await import("@/app/lib/data.js");
 
-  return projects.map((project) => ({
-    slug: project.title.toLowerCase().replace(/\s+/g, "-"),
-  }));
+  // return projects.map((project) => ({
+  //   slug: project.title.toLowerCase().replace(/\s+/g, "-"),
+  // }));
+
+  return [{ slug: "kanba" }];
 }
 
 // Page component
@@ -56,7 +51,7 @@ async function ProjectPage({ params }: Props) {
         </Link>
 
         <article className="space-y-12">
-          <Project />
+          <Project components={overrideComponents} />
         </article>
       </div>
     );
