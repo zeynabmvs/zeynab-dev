@@ -20,6 +20,16 @@ type ProjectCardProps = {
   hasDetailsPage: boolean;
 };
 
+const ProjectImage = ({ url, title }: { url: string; title: string }) => (
+  <Image
+    src={url}
+    alt={`${title} preview`}
+    fill
+    className="object-cover transition-transform duration-300 "
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  />
+);
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
@@ -34,71 +44,61 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const slug = title.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <article className="card card-shadow overflow-hidden flex flex-col h-full">
-      <div className="relative w-full aspect-3/2 group overflow-hidden rounded-lg">
-        <Image
-          src={imageUrl}
-          alt={`${title} preview`}
-          fill
-          className="object-cover transition-transform duration-300 "
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <Link
-            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
-            href={repoUrl}
-            target="_blank"
-          >
-            <CodeBracketIcon className="size-6 text-primary" />
+    <article className="card overflow-hidden flex flex-col h-full">
+      <div className="relative w-full aspect-3/2 group overflow-hidden">
+        {hasDetailsPage ? (
+          <Link href={`/projects/${slug}`} title="Read case study">
+            <ProjectImage url={imageUrl} title={title} />
           </Link>
-
-          <Link
-            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
-            href={liveSite}
-            target="_blank"
-          >
-            <EyeIcon className="size-6 text-primary" />
-          </Link>
-        </div>
+        ) : (
+          <ProjectImage url={imageUrl} title={title} />
+        )}
       </div>
-      <div className="flex flex-col flex-grow p-4">
-        <header>
-          <Link
-            className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors font-semibold"
-            href={liveSite}
-            target="_blank"
-            title="View project details"
-          >
-            {title}
-            <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
+      <div className="flex flex-col flex-grow p-4 ">
+        <header className="mb-2">
+          {hasDetailsPage ? (
+            <Link
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors font-semibold"
+              href={`/projects/${slug}`}
+              title="Case study"
+            >
+              {title}
+            </Link>
+          ) : (
+            <span className="text-primary hover:text-primary-dark font-semibold">
+              {title}
+            </span>
+          )}
 
-          </Link>
           <p className="text-sm mt-2 text-muted">{description}</p>
         </header>
-        <div className="mt-auto pt-4 flex items-center justify-between">
+        <footer className="mt-auto flex items-center justify-between">
           {techStack && techStack.length > 0 && (
             <TechStackList techStackIds={techStack} />
           )}
 
-          {hasDetailsPage && (
+          <div className="flex items-center justify-center gap-4 text-sm ">
             <a
-              href={`/projects/${slug}`}
+              className="flex items-center gap-1 hover:underline"
+              href={repoUrl}
+              target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-dark hover:underline transition-colors"
             >
-              Read more
+              <CodeBracketIcon className="size-4 text-primary" />
+              Source
             </a>
-          )}
-          {/* <a
-            href={repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-dark hover:underline transition-colors"
-          >
-            View Source
-            <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
-          </a> */}
-        </div>
+
+            <a
+              className="flex items-center gap-1 hover:underline"
+              href={liveSite}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <EyeIcon className="size-4 text-primary" />
+              live site
+            </a>
+          </div>
+        </footer>
       </div>
     </article>
   );

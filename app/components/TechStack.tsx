@@ -44,7 +44,7 @@ export const TechStackList: React.FC<TechStackListProps> = ({
       role="list"
       aria-label="Technology stack"
     >
-      {techStackIds.slice(0, 6).map((id) => {
+      {techStackIds.slice(0, 4).map((id) => {
         const stack = techStacks[id];
         if (!stack) return null;
 

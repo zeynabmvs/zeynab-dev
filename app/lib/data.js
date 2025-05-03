@@ -336,7 +336,7 @@ export const projects = [
     ],
     liveSite: "https://zeynabmvs.github.io/world-ranks/",
     priority: 2,
-    techStack: [4, 9, 8, 15, 26],
+    techStack: [4, 9, 8, 26, 15],
     hasDetailsPage: false
   },
   {
