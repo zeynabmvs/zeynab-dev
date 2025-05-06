@@ -5,9 +5,8 @@ type ExperienceCardProps = {
   role: string;
   duration: string;
   description: string;
-  imageUrl: string;
   responsibilities: string[];
-  priority: number;
+  priority: number
 };
 
 type ExperienceProps = {
@@ -19,9 +18,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   role,
   duration,
   description,
-  imageUrl,
   responsibilities,
-  priority,
 }) => (
   <div className="flex gap-4 not-last:border-b border-zinc-300 pb-4">
     {/* <div className="flex-shrink-0 relative w-16 h-16">

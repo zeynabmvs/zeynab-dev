@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowTopRightOnSquareIcon,
   CodeBracketIcon,
   EyeIcon,
 } from "@heroicons/react/24/outline";
@@ -35,8 +34,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   repoUrl,
   imageUrl,
-  projectLangs,
-  tags,
   techStack,
   liveSite,
   hasDetailsPage,

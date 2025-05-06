@@ -20,7 +20,7 @@ type Props = {
 //   };
 // }
 
-// Return a list of `params` to populate the [slug] dynamic segment
+// TODO: Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
   // const { projects } = await import("@/app/lib/data.js");
 
@@ -55,7 +55,7 @@ async function ProjectPage({ params }: Props) {
         </article>
       </div>
     );
-  } catch (error) {
+  } catch {
     // This will catch cases where the MDX file doesn't exist
     notFound();
   }

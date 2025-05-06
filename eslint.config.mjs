@@ -15,15 +15,15 @@ const eslintConfig = [
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
       "no-unused-vars": "warn",
-      "@next/next/no-unused-imports": "warn",
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/explicit-function-return-type": [
-        "warn",
-        {
-          allowExpressions: true,
-          allowTypedFunctionExpressions: true,
-        },
-      ],
+      // "@next/no-unused-imports": "warn",
+      // "@typescript-eslint/no-explicit-any": "warn",
+      // "@typescript-eslint/explicit-function-return-type": [
+      //   "warn",
+      //   {
+      //     allowExpressions: true,
+      //     allowTypedFunctionExpressions: true,
+      //   },
+      // ],
     },
   },
 ];
