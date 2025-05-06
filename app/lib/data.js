@@ -261,6 +261,7 @@ export const experiences = [
 // Set priority to 0 to exclude in UI
 export const projects = [
   {
+    id: "podcraft",
     title: "Podcraft",
     description:
       "An AI-powered podcast platform with seamless playback and playlist management.",
@@ -286,6 +287,20 @@ export const projects = [
     hasDetailsPage: false
   },
   {
+    id: "portfolio",
+    title: "Dev Portfolio",
+    description: "A minimal, lightweight developer portfolio",
+    repoUrl: "https://github.com/zeynabmvs/zeynab-dev",
+    imageUrl: "/projects/portfolio.png",
+    projectLangs: [0], 
+    tags: ["Portfolio", "Personal Website", "Next.js", "TailwindCSS"],
+    liveSite: "https://zeynab-dev.vercel.app/",
+    priority: 1,
+    techStack: [5, 3, 9, 27, 19],
+    hasDetailsPage: true
+  },
+  {
+    id: "recipedia",
     title: "Recipedia",
     description: "A recipe app for discovering and browsing food recipes.",
     repoUrl: "https://github.com/zeynabmvs/recipedia",
@@ -305,6 +320,7 @@ export const projects = [
     hasDetailsPage: false
   },
   {
+    id: "kanba",
     title: "Kanba",
     description: "A Kanban-style task management app for organizing workflows.",
     repoUrl: "https://github.com/zeynabmvs/kanba",
@@ -317,6 +333,7 @@ export const projects = [
     hasDetailsPage: true
   },
   {
+    id: "world-ranks",
     title: "World Ranks",
     description:
       "A data visualization tool for exploring global country rankings.",
@@ -340,6 +357,7 @@ export const projects = [
     hasDetailsPage: false
   },
   {
+    id: "acme-landing",
     title: "Acme Landing",
     description: "A modern and responsive landing page template.",
     repoUrl: "https://github.com/zeynabmvs/acme_landing",
@@ -358,6 +376,7 @@ export const projects = [
     hasDetailsPage: false
   },
   {
+    id: "gitHub-profile",
     title: "GitHub Profile",
     description:
       "A personal GitHub profile showcasing projects and contributions.",
@@ -372,6 +391,7 @@ export const projects = [
     hasDetailsPage: false
   },
   {
+    id: "cafe-store",
     title: "Cafe Store",
     description: "A modern café menu built with Next.js and Tailwind CSS.",
     repoUrl: "https://github.com/zeynabmvs/nextjs-cafe-store",
@@ -387,7 +407,7 @@ export const projects = [
       "Vercel",
     ],
     liveSite: "https://nextjs-cafe-store.vercel.app/",
-    priority: 3,
+    priority: 0,
     techStack: [5, 11, 3, 9, 19],
     hasDetailsPage: false
   },

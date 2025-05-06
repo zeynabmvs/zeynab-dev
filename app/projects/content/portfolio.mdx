@@ -1,0 +1,97 @@
+import { Section, Header, ProjectLinks } from "@/app/components/mdx";
+import Image from "next/image";
+
+# Portfolio Case Study
+
+A minimal, lightweight personal portfolio to showcase my frontend development skills, resume, and personal projects.
+
+<Section>
+  <Header>Overview</Header>
+
+  This personal portfolio is a reflection of my journey as a frontend developer. The goal was to create a fast, visually appealing, and easy-to-navigate site that not only showcases my skills but also demonstrates my ability to build high-performing applications. I focused on clean design, achieving impressive Lighthouse performance scores, and delivering a seamless user experience across devices.
+  
+  I took a minimalistic approach, ensuring that every element had a purpose and aligned with my personal brand. From custom utility classes to careful code splitting, the portfolio aims to showcase both my technical expertise and attention to detail.
+</Section>
+
+<Section>
+  <ProjectLinks githubRepo="https://github.com/zeynabmvs/zeynab-dev" liveSite="https://zeynab-dev.vercel.app/" />
+</Section>
+
+<Section>
+  <Header>Project Highlights</Header>
+
+  Building this portfolio was a comprehensive learning experience where I experimented with modern tools and techniques. Here’s a summary of the most significant aspects:
+
+  - **Dynamic Imports & Code Splitting**: I utilized Next.js’ built-in dynamic imports and code splitting to load heavy components only when needed, significantly improving page load times.
+  - **MDX for Flexible Content Authoring**: By integrating MDX, I enabled an easy-to-maintain content structure that allows for scalable additions such as blog posts or case studies in the future.
+  - **Performance Optimization**: I took extra care in optimizing images, minimizing JavaScript, and lazy-loading assets, which helped me achieve Lighthouse performance scores of 82+ across all categories.
+  - **Custom Design System**: Using Tailwind CSS, I built responsive components from scratch. The design was crafted with mobile-first principles in mind to ensure it works seamlessly across devices.
+  - **SEO Best Practices**: With Next.js and semantic HTML, I ensured the project was SEO-friendly, which is crucial for increasing visibility and engagement.
+</Section>
+
+<Section>
+  <Header>Technologies</Header>
+
+  - **Frontend Framework**: Next.js 15 (App Router, MDX support)
+  - **Styling**: Tailwind CSS 4, custom utility-first classes
+  - **Icons & Visuals**: Heroicons
+  - **Animations**: Framer Motion
+  - **Type Checking**: TypeScript 5
+  - **Linting**: ESLint (Next.js config)
+  - **Version Control**: Git & GitHub
+  - **Performance Monitoring**: Lighthouse Audit, Vercel Analytics
+</Section>
+
+<Section>
+  <Header>Challenges & Solutions</Header>
+
+  This portfolio was built to reflect my growth as a developer. Here’s a deeper dive into the technical challenges I faced and how I overcame them:
+
+  **Performance Optimization**: One of the main goals was to achieve fast load times. By optimizing images and using lazy loading, I significantly reduced page weight. Additionally, I made use of Next.js’s built-in performance optimizations, including automatic code splitting, to ensure faster rendering.
+  
+  **Content Management**: Managing content and ensuring scalability was important. I integrated MDX to allow for easy content management and future expansion, such as adding a blog section or case studies without needing to redeploy the entire site.
+  
+  **Design Consistency**: Without a pre-existing design system, I built a custom Tailwind theme configuration. This allowed me to keep the design consistent and ensure that it was flexible enough to handle any new components in the future. I also used AI tools to audit my design and ensure I adhered to UX best practices.
+  
+  These challenges pushed me to learn more about performance, content management, and design systems — skills I’ll continue to use in future projects.
+</Section>
+
+<Section>
+  <figure className="flex flex-col items-center">
+    <img
+      src="/portfolio-performance.png"
+      alt="Lighthouse Performance Report"
+      className="rounded-md object-cover"
+    />
+    <figcaption className="text-sm text-muted mt-2">
+      Lighthouse Performance Report
+    </figcaption>
+  </figure>
+</Section>
+
+<Section>
+  <Header>Future Improvements</Header>
+
+  As this portfolio is a living project, I plan to continue improving it. Some of the next steps include:
+
+  - **Blog Section**: I will add a blog section powered by MDX, where I can share technical articles, tutorials, and my thoughts on frontend development.
+  - **Dark Mode**: Adding a dark mode toggle will improve the user experience, especially for users with specific preferences.
+  - **Motion Enhancements**: I’m looking to add more Framer Motion animations to enhance the visual appeal and interaction.
+  - **Internationalization (i18n)**: If the site gains a broader audience, I’ll implement i18n for multi-language support.
+  - **Improve Lighthouse Performance**: Currently it has a 82 score, with image optimization, code splitting and other techniques I believe I can get a higher score.
+  
+  These enhancements will not only make the site more engaging but also provide valuable opportunities for further learning and skill development.
+</Section>
+
+<Section>
+  <Header>Use of AI Tools</Header>
+
+  Throughout the development of this portfolio, AI tools played a significant role in streamlining my workflow and enhancing my productivity. Here’s how I used them:
+
+  - **GitHub Copilot**: As a supportive collaborator, GitHub Copilot helped me speed up tasks like writing basic code snippets, configuring settings, and troubleshooting. Although Copilot provided suggestions, I ensured that the final code was tailored to my needs.
+  - **Prompt Engineering**: I treated prompt writing as a skill, refining my ability to communicate effectively with AI. This helped me get better outputs and streamline my coding process.
+  - **Design Decisions**: Since I didn’t have a ready-made design file, I relied on AI tools to audit my design system, making sure that accessibility and UX practices were followed.
+  - **Case Study Writing**: AI also assisted in structuring and refining the content of this case study, ensuring that my thoughts were clearly communicated and professionally presented.
+
+  Overall, AI was an invaluable tool, assisting with both technical and non-technical aspects of development, but it was always my decision-making that drove the project forward.
+</Section>

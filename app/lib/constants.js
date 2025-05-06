@@ -26,6 +26,7 @@ export const techStacks = [
   { id: 24, label: "React Hook Form", icon: "/tools/reacthookform.svg" },
   { id: 25, label: "API", icon: "/tools/api.svg" },
   { id: 26, label: "React Router Dom", icon: "/tools/reactrouter.svg" },
+  { id: 27, label: "MDX", icon: "/tools/mdx.svg" },
   
 ];
 

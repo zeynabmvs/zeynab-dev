@@ -61,11 +61,11 @@ function CustomH1({ children }) {
   return <h1 className="text-4xl font-bold">{children}</h1>;
 }
 function CustomP({ children }) {
-  return <p className="text-muted">{children}</p>;
+  return <p className="text-zinc-600">{children}</p>;
 }
 function CustomUl({ children }) {
   return (
-    <ul className="list-disc list-inside space-y-2 text-muted">{children}</ul>
+    <ul className="list-disc list-inside space-y-2 text-zinc-600">{children}</ul>
   );
 }
 

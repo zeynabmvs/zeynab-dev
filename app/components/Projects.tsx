@@ -7,6 +7,7 @@ import {
 import { TechStackList } from "@/app/components/TechStack";
 
 type ProjectCardProps = {
+  id: string
   title: string;
   description: string;
   repoUrl: string;
@@ -30,6 +31,7 @@ const ProjectImage = ({ url, title }: { url: string; title: string }) => (
 );
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
+  id,
   title,
   description,
   repoUrl,
@@ -38,13 +40,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveSite,
   hasDetailsPage,
 }) => {
-  const slug = title.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <article className="card overflow-hidden flex flex-col h-full">
       <div className="relative w-full aspect-3/2 group overflow-hidden">
         {hasDetailsPage ? (
-          <Link href={`/projects/${slug}`} title="Read case study">
+          <Link href={`/projects/${id}`} title="Read case study">
             <ProjectImage url={imageUrl} title={title} />
           </Link>
         ) : (
@@ -56,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {hasDetailsPage ? (
             <Link
               className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors font-semibold"
-              href={`/projects/${slug}`}
+              href={`/projects/${id}`}
               title="Case study"
             >
               {title}
@@ -112,8 +113,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      {sortedProjects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+      {sortedProjects.map((project) => (
+        <ProjectCard key={project.id} {...project} />
       ))}
     </div>
   );

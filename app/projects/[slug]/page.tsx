@@ -28,7 +28,7 @@ export async function generateStaticParams() {
   //   slug: project.title.toLowerCase().replace(/\s+/g, "-"),
   // }));
 
-  return [{ slug: "kanba" }];
+  return [{ slug: "kanba" }, { slug: "portfolio" }];
 }
 
 // Page component

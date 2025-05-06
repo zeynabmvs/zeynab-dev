@@ -28,7 +28,7 @@ A minimal, lightweight, and high-performance personal portfolio built with Next.
 
 - **Linting**: ESLint (with Next.js configuration)
 
-- **Performance**:Achieves 95–100% scores on Lighthouse across:
+- **Performance**:Achieves 82–100% scores on Lighthouse across:
 
   - Performance
 
@@ -68,6 +68,10 @@ npm run dev
 ## Live Site
 
 [View Portfolio Live](https://zeynab-dev.vercel.app/) 
+
+## Case study
+
+[Read project's case study here](http://zeynab-dev.vercel.app/projects/portfolio)
 
 ## License
 
