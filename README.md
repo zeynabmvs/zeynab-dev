@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Developer Portfolio
 
-## Getting Started
+A minimal, lightweight, and high-performance personal portfolio built with Next.js 15, Tailwind CSS 4, and TypeScript 5 — designed to achieve excellent Lighthouse scores.
 
-First, run the development server:
+## Features
 
-```bash
+- ✨ Minimal and clean UI for focus and readability
+
+- ⚡ Optimized for speed with top Lighthouse performance
+
+- 🛠️ Built with modern technologies: Next.js 15, Tailwind CSS 4, TypeScript 5
+
+- 🧩 MDX support for flexible content and components
+
+- 🧹 Strict linting and clean coding standards
+
+- 📱 Responsive design for all devices
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (with Turbopack)
+
+- **Styling**: Tailwind CSS 4
+
+- **Language**: TypeScript 5
+
+- **Markdown/Content**: MDX (@mdx-js/react, @next/mdx)
+
+- **Linting**: ESLint (with Next.js configuration)
+
+- **Performance**:Achieves 95–100% scores on Lighthouse across:
+
+  - Performance
+
+  - Accessibility
+
+  - Best Practices
+
+  - SEO
+
+
+## Installation
+
+```
+# Clone the repository
+git clone https://github.com/zeynabmvs/zeynab-dev.git
+
+# Navigate to the project directory
+cd zeynab-dev
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ```npm run dev``` — Start the development server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ```npm run build``` — Build for production
 
-## Learn More
+- ```npm run start``` — Start the production server
 
-To learn more about Next.js, take a look at the following resources:
+- ```npm run lint``` — Run lint checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Live Site
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[View Portfolio Live](https://zeynab-dev.vercel.app/) 
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
