@@ -20,3 +20,10 @@ body {
     @apply hover:shadow-lg transition;
   }
 }
+
+@media (max-width: 768px) {
+  .project-image.active .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -5,9 +6,10 @@ import {
   EyeIcon,
 } from "@heroicons/react/24/outline";
 import { TechStackList } from "@/app/components/TechStack";
+import { useState, useRef, useEffect } from "react";
 
 type ProjectCardProps = {
-  id: string
+  id: string;
   title: string;
   description: string;
   repoUrl: string;
@@ -20,16 +22,6 @@ type ProjectCardProps = {
   hasDetailsPage: boolean;
 };
 
-const ProjectImage = ({ url, title }: { url: string; title: string }) => (
-  <Image
-    src={url}
-    alt={`${title} preview`}
-    fill
-    className="object-cover transition-transform duration-300 "
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  />
-);
-
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
   title,
@@ -40,34 +32,82 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveSite,
   hasDetailsPage,
 }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const projectCardRef = useRef(null)
+
+  useEffect(()=>{
+    function listener(event) {
+      if (event.target === document.documentElement || event.target === document.body) {
+        // This is a click on the scrollbar
+        return
+      }
+      if (!projectCardRef.current || projectCardRef.current.contains(event.target)) {
+        // This is a click inside of ref
+        return;
+      }
+
+      setShowOverlay(false)
+    }
+
+    window.addEventListener("mousedown", listener);
+    window.addEventListener("touchstart", listener);
+
+    return () => {
+      window.removeEventListener("mousedown", listener);
+      window.removeEventListener("touchstart", listener);
+    };
+
+  }, [projectCardRef])
+
+  const handleInteraction = () => {
+    setShowOverlay((prev) => !prev);
+  };
 
   return (
     <article className="card overflow-hidden flex flex-col h-full">
-      <div className="relative w-full aspect-3/2 group overflow-hidden">
-        {hasDetailsPage ? (
-          <Link href={`/projects/${id}`} title="Read case study">
-            <ProjectImage url={imageUrl} title={title} />
+      <div
+        className={`project-image relative w-full aspect-3/2 group overflow-hidden rounded-t-lg ${
+          showOverlay ? "active" : ""
+        }`}
+        onClick={handleInteraction}
+        ref={projectCardRef}
+      >
+        <Image
+          src={imageUrl}
+          alt={`${title} preview`}
+          fill
+          className="object-cover transition-transform duration-300 "
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div
+          className={`overlay invisible opacity-0 flex absolute inset-0 bg-primary/70 group-hover:opacity-100 group-hover:visible transition-opacity duration-300  items-center justify-center gap-4 ${
+            showOverlay ? "visible" : ""
+          }`}
+        >
+          <Link
+            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CodeBracketIcon className="size-6 text-primary" />
           </Link>
-        ) : (
-          <ProjectImage url={imageUrl} title={title} />
-        )}
+
+          <Link
+            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
+            href={liveSite}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EyeIcon className="size-6 text-primary" />
+          </Link>
+        </div>
       </div>
       <div className="flex flex-col flex-grow p-4 ">
         <header className="mb-2">
-          {hasDetailsPage ? (
-            <Link
-              className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors font-semibold"
-              href={`/projects/${id}`}
-              title="Case study"
-            >
-              {title}
-            </Link>
-          ) : (
-            <span className="text-primary hover:text-primary-dark font-semibold">
-              {title}
-            </span>
-          )}
-
+          <span className="text-primary hover:text-primary-dark font-semibold">
+            {title}
+          </span>
           <p className="text-sm mt-2 text-muted">{description}</p>
         </header>
         <footer className="mt-auto flex items-center justify-between">
@@ -76,25 +116,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
 
           <div className="flex items-center justify-center gap-4 text-sm ">
-            <a
-              className="flex items-center gap-1 hover:underline"
-              href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CodeBracketIcon className="size-4 text-primary" />
-              Source
-            </a>
+            {hasDetailsPage && (
+              <Link
+                className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors"
+                href={`/projects/${id}`}
+                title="Case study"
+              >
+                Read more
+              </Link>
+            )}
 
-            <a
-              className="flex items-center gap-1 hover:underline"
-              href={liveSite}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <EyeIcon className="size-4 text-primary" />
-              live site
-            </a>
           </div>
         </footer>
       </div>
