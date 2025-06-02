@@ -26,8 +26,8 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   <div className="flex flex-row md:flex-col items-center md:items-start w-full gap-2 md:gap-4">
     <Avatar src={avatar} alt={`${name}'s profile`} />
     <div className="flex flex-col items-start">
-      <h1 className="md:mt-2 text-lg md:text-xl font-bold">{name}</h1>
-      <p className="text-sm font-medium text-muted">{role}</p>
+      <h1 className="md:mt-2 text-lg md:text-xl font-bold text-primary dark:text-primary-dark">{name}</h1>
+      <p className="text-sm font-medium ">{role}</p>
     </div>
   </div>
 );
@@ -35,7 +35,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 type ProfileBioProps = { bio: string };
 
 const ProfileBio: React.FC<ProfileBioProps> = ({ bio }) => (
-  <p className="mt-2 text-left text-sm text-muted">{bio}</p>
+  <p className="mt-2 text-left text-sm ">{bio}</p>
 );
 
 type ProfileLinksProps = {
@@ -48,7 +48,7 @@ type ProfileLinksProps = {
 };
 
 const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
-  <div className="mt-4 flex flex-col space-y-1.5 border-t pt-3 border-zinc-300">
+  <div className="mt-4 flex flex-col space-y-1.5 border-t pt-3 border-zinc-300 dark:border-zinc-600 ">
     {links
       .filter((link) => link.active)
       .map(({ href, label, icon }) => (
@@ -59,7 +59,7 @@ const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
           href={href}
         >
           {icon}
-          <p className="text-sm duration-200 ease-linear text-muted group-hover:text-primary">
+          <p className="text-sm duration-200 ease-linear text-muted dark:text-muted-dark group-hover:text-primary group-hover:dark:text-primary-dark">
             /{label}
           </p>
         </a>
@@ -89,7 +89,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   contactLink,
   links,
 }) => (
-  <div className="card p-4 md:p-6 md:flex-2/3">
+  <div className="card p-4 md:p-6 md:flex-2/3 text-muted dark:text-muted-dark">
     <ProfileHeader name={name} role={role} avatar={avatar} />
     <ProfileBio bio={bio} />
     <div className="mt-4 mb-4">

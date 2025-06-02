@@ -102,7 +102,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div
-          className={`overlay absolute inset-0 bg-primary/70 flex items-center justify-center gap-4 transition-opacity duration-300 ${
+          className={`overlay absolute inset-0 bg-primary/70 dark:bg-primary-20 flex items-center justify-center gap-4 transition-opacity duration-300 ${
             showOverlay ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
@@ -128,10 +128,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="flex flex-col flex-grow p-4 ">
         <header className="mb-2">
-          <span className="text-primary hover:text-primary-dark font-semibold">
+          <span className="text-primary dark:text-primary-dark font-semibold">
             {title}
           </span>
-          <p className="text-sm mt-2 text-muted">{description}</p>
+          <p className="text-sm mt-2 text-muted dark:text-muted-dark">{description}</p>
         </header>
         <footer className="mt-auto flex items-center justify-between">
           {techStack && techStack.length > 0 && (
@@ -141,7 +141,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex items-center justify-center gap-4 text-sm ">
             {hasDetailsPage && (
               <Link
-                className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark hover:underline transition-colors"
+                className="inline-flex items-center gap-1.5 text-primary dark:text-primary-dark hover:underline transition-colors"
                 href={`/projects/${id}`}
                 title="Case study"
               >

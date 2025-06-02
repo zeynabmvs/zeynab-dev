@@ -20,8 +20,8 @@ const SkillItemWithIcon: React.FC<{ skill: Skill }> = ({ skill }) => (
 );
 
 const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => (
-  <div className="inline-flex items-center px-3 py-1 bg-zinc-100 rounded-full hover:bg-zinc-700 group cursor-default transition-all duration-150">
-    <span className="text-primary text-xs group-hover:text-zinc-100">{skill.name}</span>
+  <div className="inline-flex items-center px-3 py-1 bg-zinc-100 dark:bg-zinc-700 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 group cursor-default transition-all duration-150">
+    <span className="text-primary dark:text-primary-dark text-xs group-hover:text-zinc-100 group-hover:dark:text-zinc-800">{skill.name}</span>
   </div>
 );
 

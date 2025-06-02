@@ -8,7 +8,8 @@ const Button: React.FC<ButtonProps> = ({ label, href }) => (
       rounded-full
       text-sm font-semibold
       bg-primary text-white
-      hover:bg-primary/90
+      dark:bg-primary-dark dark:text-zinc-950
+      hover:bg-primary/90 hover:dark:bg-primary-dark/90
       px-4 py-2
       transition-colors duration-200
     "

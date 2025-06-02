@@ -6,6 +6,12 @@
 
   --color-primary: var(--color-zinc-900);
   --color-muted: var(--color-zinc-600);
+
+  --color-primary-dark: var(--color-zinc-50);
+  --color-muted-dark: var(--color-zinc-300);
+
+  --color-light: var(--color-white);
+  --color-dark: var(--color-zinc-800);
 }
 
 body {
@@ -14,7 +20,7 @@ body {
 
 @layer components {
   .card {
-    @apply border border-zinc-200 relative rounded-xl sm:rounded-2xl overflow-clip bg-white;
+    @apply border border-zinc-200 dark:border-zinc-700 relative rounded-xl sm:rounded-2xl overflow-clip bg-white dark:bg-zinc-800;
   }
   .card-shadow {
     @apply hover:shadow-lg transition;

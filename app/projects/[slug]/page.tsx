@@ -44,7 +44,7 @@ async function ProjectPage({ params }: Props) {
       <div className="container mx-auto px-4 py-8 max-w-screen-lg">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-muted hover:text-primary mb-8"
+          className="inline-flex items-center gap-2 text-sm text-muted dark:text-muted-dark hover:text-primary dark:hover:text-primary-dark mb-8"
         >
           <ArrowLeftIcon className="w-4 h-4" />
           Back to home

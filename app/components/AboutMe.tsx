@@ -8,7 +8,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ paragraphs }) => (
     {paragraphs.map((paragraph, index) => (
       <p
         key={index}
-        className={`text-muted ${
+        className={`text-muted dark:text-muted-dark ${
           index !== paragraphs.length - 1 ? "mb-4" : ""
         }`}
       >
