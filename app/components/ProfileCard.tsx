@@ -27,7 +27,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     <Avatar src={avatar} alt={`${name}'s profile`} />
     <div className="flex flex-col items-start">
       <h1 className="md:mt-2 text-lg md:text-xl font-bold text-primary dark:text-primary-dark">{name}</h1>
-      <p className="text-sm font-medium ">{role}</p>
+      <h2 className="text-sm font-medium ">{role}</h2>
     </div>
   </div>
 );

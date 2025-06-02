@@ -128,9 +128,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="flex flex-col flex-grow p-4 ">
         <header className="mb-2">
-          <span className="text-primary dark:text-primary-dark font-semibold">
+          <h3 className="text-primary dark:text-primary-dark font-semibold">
             {title}
-          </span>
+          </h3>
           <p className="text-sm mt-2 text-muted dark:text-muted-dark">{description}</p>
         </header>
         <footer className="mt-auto flex items-center justify-between">
