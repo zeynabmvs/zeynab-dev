@@ -5,7 +5,7 @@
   --font-mono: var(--font-geist-mono);
 
   --color-primary: var(--color-zinc-900);
-  --color-muted: var(--color-zinc-500);
+  --color-muted: var(--color-zinc-600);
 }
 
 body {
