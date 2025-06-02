@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Zeynab Moosavqpour",
+  name: "Zeynab Movasaqpour",
   role: "Web Developer",
   avatar: "https://avatars.githubusercontent.com/u/30770159?v=4",
   bio: "Web developer with a solid background in backend and WordPress development, currently focused on building modern, scalable interfaces using React, TypeScript, and Next.js.",
@@ -67,7 +67,7 @@ export const profile = {
     "Hi, I’m Zeynab — a web developer with over four years of experience in web development. I’ve worked on a variety of projects, both solo and in teams, and I’m always looking for new challenges that push me to grow and learn.",
     "Over the past 9+ months, I’ve been diving deep into modern frontend tools like React, Next.js, and TypeScript by building open-source projects. I love creating clean, user-friendly interfaces and finding smart ways to automate repetitive tasks.",
     "I’ve been collaborating on practice projects in a frontend team, where I contributed as both a coder and code reviewer. Through this experience, I developed the soft skills of a developer — improving communication, collaboration, and team workflow.",
-    "Moving forward, I’m excited to join a supportive team where I can continue to grow and make a real impact through the products I help create.",
+    // "Moving forward, I’m excited to join a supportive team where I can continue to grow and make a real impact through the products I help create.",
   ],
 };
 
