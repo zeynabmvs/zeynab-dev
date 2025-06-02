@@ -1,10 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  CodeBracketIcon,
-  EyeIcon,
-} from "@heroicons/react/24/outline";
+import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import { TechStackList } from "@/app/components/TechStack";
 import { useState, useRef, useEffect } from "react";
 
@@ -33,20 +30,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   hasDetailsPage,
 }) => {
   const [showOverlay, setShowOverlay] = useState(false);
-  const projectCardRef = useRef(null)
+  const projectCardRef = useRef(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     function listener(event) {
-      if (event.target === document.documentElement || event.target === document.body) {
+      if (
+        event.target === document.documentElement ||
+        event.target === document.body
+      ) {
         // This is a click on the scrollbar
-        return
+        return;
       }
-      if (!projectCardRef.current || projectCardRef.current.contains(event.target)) {
+      if (
+        !projectCardRef.current ||
+        projectCardRef.current.contains(event.target)
+      ) {
         // This is a click inside of ref
         return;
       }
 
-      setShowOverlay(false)
+      setShowOverlay(false);
     }
 
     window.addEventListener("mousedown", listener);
@@ -56,8 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       window.removeEventListener("mousedown", listener);
       window.removeEventListener("touchstart", listener);
     };
-
-  }, [projectCardRef])
+  }, [projectCardRef]);
 
   const handleInteraction = () => {
     setShowOverlay((prev) => !prev);
@@ -65,23 +67,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <article className="card overflow-hidden flex flex-col h-full">
-      <div
-        className={`project-image relative w-full aspect-3/2 group overflow-hidden rounded-t-lg ${
+           <div
+        className={`project-image relative w-full aspect-3/2 overflow-hidden rounded-t-lg ${
           showOverlay ? "active" : ""
         }`}
         onClick={handleInteraction}
+        onMouseEnter={() => setShowOverlay(true)}
+        onMouseLeave={() => setShowOverlay(false)}
+        onFocusCapture={() => setShowOverlay(true)}
+        onBlurCapture={(e) => {
+          if (!projectCardRef.current?.contains(e.relatedTarget)) {
+            setShowOverlay(false);
+          }
+        }}
+        onKeyDown={(e) => {
+          // Only handle key events if the container itself is the target,
+          // allowing inner link elements to handle Enter normally.
+          if (e.currentTarget !== e.target) return;
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleInteraction();
+          }
+        }}
+        tabIndex={0}
+        role="button"
         ref={projectCardRef}
       >
+        
         <Image
           src={imageUrl}
           alt={`${title} preview`}
           fill
-          className="object-cover transition-transform duration-300 "
+          className="object-cover transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div
-          className={`overlay invisible opacity-0 flex absolute inset-0 bg-primary/70 group-hover:opacity-100 group-hover:visible transition-opacity duration-300  items-center justify-center gap-4 ${
-            showOverlay ? "visible" : ""
+          className={`overlay absolute inset-0 bg-primary/70 flex items-center justify-center gap-4 transition-opacity duration-300 ${
+            showOverlay ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
           <Link
@@ -89,15 +111,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={repoUrl}
             target="_blank"
             rel="noopener noreferrer"
+            tabIndex={showOverlay ? 0 : -1}
           >
             <CodeBracketIcon className="size-6 text-primary" />
           </Link>
-
           <Link
             className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
             href={liveSite}
             target="_blank"
             rel="noopener noreferrer"
+            tabIndex={showOverlay ? 0 : -1}
           >
             <EyeIcon className="size-6 text-primary" />
           </Link>
@@ -125,7 +148,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 Read more
               </Link>
             )}
-
           </div>
         </footer>
       </div>
