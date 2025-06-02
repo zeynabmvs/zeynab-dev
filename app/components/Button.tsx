@@ -3,6 +3,7 @@ const Button: React.FC<ButtonProps> = ({ label, href }) => (
   <a
     href={href}
     target="_blank"
+    role="button"
     className="
       inline-flex items-center justify-center w-full
       rounded-full

@@ -44,6 +44,7 @@ type ProfileLinksProps = {
     label: string;
     icon: React.ReactNode;
     active: boolean;
+    to: string;
   }[];
 };
 
@@ -51,17 +52,19 @@ const ProfileLinks: React.FC<ProfileLinksProps> = ({ links }) => (
   <div className="mt-4 flex flex-col space-y-1.5 border-t pt-3 border-zinc-300 dark:border-zinc-600 ">
     {links
       .filter((link) => link.active)
-      .map(({ href, label, icon }) => (
+      .map(({ href, label, icon, to }) => (
         <a
           key={href}
           target="_blank"
           className=" flex items-center gap-2 group"
           href={href}
+          title={`Visit my ${to}`}
+          aria-label={`Visit my ${to}`}
         >
           {icon}
-          <p className="text-sm duration-200 ease-linear text-muted dark:text-muted-dark group-hover:text-primary group-hover:dark:text-primary-dark">
+          <span className="text-sm duration-200 ease-linear text-muted dark:text-muted-dark group-hover:text-primary group-hover:dark:text-primary-dark">
             /{label}
-          </p>
+          </span>
         </a>
       ))}
   </div>
@@ -78,6 +81,7 @@ type ProfileCardProps = {
     label: string;
     icon: React.ReactNode;
     active: boolean;
+    to: string;
   }[];
 };
 

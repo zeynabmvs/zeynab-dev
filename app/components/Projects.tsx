@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <article className="card overflow-hidden flex flex-col h-full">
-           <div
+      <div
         className={`project-image relative w-full aspect-3/2 overflow-hidden rounded-t-lg ${
           showOverlay ? "active" : ""
         }`}
@@ -93,7 +93,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         role="button"
         ref={projectCardRef}
       >
-        
         <Image
           src={imageUrl}
           alt={`${title} preview`}
@@ -112,6 +111,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={showOverlay ? 0 : -1}
+            title="Source code"
+            aria-label={`View ${title} project's source code`}
           >
             <CodeBracketIcon className="size-6 text-primary" />
           </Link>
@@ -121,6 +122,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             tabIndex={showOverlay ? 0 : -1}
+            title="Live site"
+            aria-label={`Visit ${title} project's live site`}
           >
             <EyeIcon className="size-6 text-primary" />
           </Link>
@@ -131,7 +134,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <h3 className="text-primary dark:text-primary-dark font-semibold">
             {title}
           </h3>
-          <p className="text-sm mt-2 text-muted dark:text-muted-dark">{description}</p>
+          <p className="text-sm mt-2 text-muted dark:text-muted-dark">
+            {description}
+          </p>
         </header>
         <footer className="mt-auto flex items-center justify-between">
           {techStack && techStack.length > 0 && (
@@ -143,9 +148,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <Link
                 className="inline-flex items-center gap-1.5 text-primary dark:text-primary-dark hover:underline transition-colors"
                 href={`/projects/${id}`}
-                title="Case study"
+                aria-label={`Read ${title} project's case study `}
               >
-                Read more
+                Read Case Study
               </Link>
             )}
           </div>

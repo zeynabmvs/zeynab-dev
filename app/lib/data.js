@@ -23,6 +23,7 @@ export const profile = {
         </svg>
       ),
       active: true,
+      to: "linkedIn"
     },
     {
       href: "https://github.com/zeynabmvs",
@@ -42,6 +43,7 @@ export const profile = {
         </svg>
       ),
       active: true,
+      to: "github"
     },
     {
       href: "https://twitter.com/john-doe",
