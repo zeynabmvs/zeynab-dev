@@ -10,7 +10,7 @@ type TechStackItemProps = {
 const TechStackItem: React.FC<TechStackItemProps> = ({ label, icon }) => {
   return (
     <div
-      className="transition-transform -ml-2 first:ml-0 cursor-pointer relative group"
+      className="transition-transform -ml-2 first:ml-0 relative group"
       role="listitem"
     >
       <div className="w-[36px] h-[36px] rounded-full border border-zinc-200 dark:border-zinc-700 flex items-center justify-center bg-white dark:bg-zinc-800">
