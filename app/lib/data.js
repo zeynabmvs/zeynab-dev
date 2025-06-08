@@ -63,6 +63,7 @@ export const profile = {
         </svg>
       ),
       active: false,
+      to: "twitter"
     },
   ],
   aboutMe: [

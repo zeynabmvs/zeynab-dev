@@ -1,3 +1,5 @@
+import React from "react";
+
 type ButtonProps = { label: string; href: string };
 const Button: React.FC<ButtonProps> = ({ label, href }) => (
   <a
