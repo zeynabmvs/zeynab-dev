@@ -146,7 +146,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex items-center justify-center gap-4 text-sm ">
             {hasDetailsPage && (
               <Link
-                className="inline-flex items-center gap-1.5 text-primary dark:text-primary-dark hover:underline transition-colors"
+                className="inline-flex items-center gap-1.5 text-primary dark:text-primary-dark underline hover:no-underline"
                 href={`/projects/${id}`}
                 aria-label={`Read ${title} project's case study `}
               >

@@ -318,7 +318,7 @@ export const projects = [
     ],
     liveSite: "https://food-recipe-react-dun.vercel.app/",
     priority: 2,
-    techStack: [4, 26, 9, 15],
+    techStack: [4, 9, 26, 15],
     hasDetailsPage: false
   },
   {
