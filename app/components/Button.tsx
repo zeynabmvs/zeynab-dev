@@ -6,7 +6,7 @@ const Button: React.FC<ButtonProps> = ({ label, href }) => (
     href={href}
     target="_blank"
     role="button"
-    className="
+    className="relative overflow-hidden shiny-hover-btn
       inline-flex items-center justify-center w-full
       rounded-full
       text-sm font-semibold
@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({ label, href }) => (
       dark:bg-primary-dark dark:text-zinc-950
       hover:bg-primary/90 hover:dark:bg-primary-dark/90
       px-4 py-2
-      transition-colors duration-200
+      transition-colors
     "
   >
     {label}
