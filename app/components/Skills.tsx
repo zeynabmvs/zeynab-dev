@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type Skill = {
   name: string;
   icon: string;
@@ -12,16 +10,11 @@ type SkillsGroupType = {
   tools: Skill[];
 };
 
-const SkillItemWithIcon: React.FC<{ skill: Skill }> = ({ skill }) => (
-  <div className="inline-flex items-center gap-1.5 rounded-full">
-    <Image src={skill.icon} alt={`${skill.name} icon`} width={16} height={16} />
-    <span className="text-muted text-xs">{skill.name}</span>
-  </div>
-);
-
 const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => (
   <div className="inline-flex items-center px-3.5 py-1.5 bg-zinc-100 dark:bg-zinc-700 rounded-full cursor-default transition-all duration-200 opacity-85 scale-90 hover:scale-100 hover:opacity-100">
-    <span className="text-primary dark:text-primary-dark text-xs">{skill.name}</span>
+    <span className="text-primary dark:text-primary-dark text-xs">
+      {skill.name}
+    </span>
   </div>
 );
 
