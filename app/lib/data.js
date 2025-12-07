@@ -353,7 +353,7 @@ export const projects = [
       "React query",
       "Rest countries api",
     ],
-    liveSite: "https://zeynabmvs.github.io/world-ranks/",
+    liveSite: "",
     priority: 2,
     techStack: [4, 9, 8, 26, 15],
     hasDetailsPage: false

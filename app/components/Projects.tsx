@@ -31,6 +31,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const projectCardRef = useRef(null);
+  const hasRepoLink = Boolean(repoUrl && repoUrl.trim());
+  const hasLiveLink = Boolean(liveSite && liveSite.trim());
 
   useEffect(() => {
     function listener(event) {
@@ -105,28 +107,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             showOverlay ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          <Link
-            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
-            href={repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex={showOverlay ? 0 : -1}
-            title="Source code"
-            aria-label={`View ${title} project's source code`}
-          >
-            <CodeBracketIcon className="size-6 text-primary" />
-          </Link>
-          <Link
-            className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
-            href={liveSite}
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex={showOverlay ? 0 : -1}
-            title="Live site"
-            aria-label={`Visit ${title} project's live site`}
-          >
-            <EyeIcon className="size-6 text-primary" />
-          </Link>
+          {hasRepoLink && (
+            <Link
+              className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
+              href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={showOverlay ? 0 : -1}
+              title="Source code"
+              aria-label={`View ${title} project's source code`}
+            >
+              <CodeBracketIcon className="size-6 text-primary" />
+            </Link>
+          )}
+          {hasLiveLink && (
+            <Link
+              className="p-2 bg-white rounded-full hover:bg-gray-200 cursor-pointer"
+              href={liveSite}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={showOverlay ? 0 : -1}
+              title="Live site"
+              aria-label={`Visit ${title} project's live site`}
+            >
+              <EyeIcon className="size-6 text-primary" />
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex flex-col flex-grow p-4 ">
