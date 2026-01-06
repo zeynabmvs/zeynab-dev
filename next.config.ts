@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
   },
 
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+
+  turbopack: {
+    root: __dirname,
+  },
 };
 const withMDX = createMDX({
   // Add markdown plugins here, as desired

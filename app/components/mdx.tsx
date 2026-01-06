@@ -57,13 +57,13 @@ export function ProjectLinks({
   );
 }
 
-function CustomH1({ children }) {
+function CustomH1({ children }: { children: ReactNode }) {
   return <h1 className="text-4xl font-bold">{children}</h1>;
 }
-function CustomP({ children }) {
+function CustomP({ children }: { children: ReactNode }) {
   return <p className="text-muted dark:text-muted-dark">{children}</p>;
 }
-function CustomUl({ children }) {
+function CustomUl({ children }: { children: ReactNode }) {
   return (
     <ul className="list-disc list-inside space-y-2 text-muted dark:text-muted-dark">{children}</ul>
   );
