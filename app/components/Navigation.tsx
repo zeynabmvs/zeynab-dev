@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { headerLinks } from "@/app/lib/data";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 export default function Navigation() {
   return (
@@ -29,6 +30,7 @@ export default function Navigation() {
           ))}
         </ul>
       </nav>
+      <ThemeToggle />
     </div>
   );
 }

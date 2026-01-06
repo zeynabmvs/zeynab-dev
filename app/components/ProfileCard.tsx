@@ -6,7 +6,7 @@ type AvatarProps = { src: string; alt: string };
 const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
   <div className="relative size-24 md:size-36 lg:mx-auto">
     <Image
-      className="rounded-full object-cover border border-zinc-100"
+      className="rounded-full object-cover border border-zinc-100 dark:border-zinc-700"
       src={src}
       alt={alt}
       width={300}
