@@ -30,12 +30,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   hasDetailsPage,
 }) => {
   const [showOverlay, setShowOverlay] = useState(false);
-  const projectCardRef = useRef(null);
+  const projectCardRef = useRef<HTMLDivElement>(null);
   const hasRepoLink = Boolean(repoUrl && repoUrl.trim());
   const hasLiveLink = Boolean(liveSite && liveSite.trim());
 
   useEffect(() => {
-    function listener(event) {
+    function listener(event: MouseEvent | TouchEvent) {
       if (
         event.target === document.documentElement ||
         event.target === document.body
@@ -45,7 +45,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       }
       if (
         !projectCardRef.current ||
-        projectCardRef.current.contains(event.target)
+        (event.target instanceof Node &&
+          projectCardRef.current.contains(event.target))
       ) {
         // This is a click inside of ref
         return;
@@ -93,6 +94,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }}
         tabIndex={0}
         role="button"
+        aria-label={`${title} project card. Click to view links.`}
         ref={projectCardRef}
       >
         <Image
@@ -135,7 +137,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
       </div>
-      <div className="flex flex-col flex-grow p-4 ">
+      <div className="flex flex-col grow p-4 ">
         <header className="mb-2">
           <h3 className="text-primary dark:text-primary-dark font-semibold">
             {title}

@@ -1,4 +1,18 @@
-export const techStacks = [
+export interface TechStack {
+  id: number;
+  label: string;
+  icon: string;
+}
+
+export interface Language {
+  id: string;
+  name: string;
+  color: string;
+  icon: string;
+  repo: string;
+}
+
+export const techStacks: TechStack[] = [
   { id: 0, label: "HTML", icon: "/tools/html5.svg" },
   { id: 1, label: "CSS", icon: "/tools/css3.svg" },
   { id: 2, label: "JavaScript", icon: "/tools/javascript.svg" },
@@ -22,40 +36,38 @@ export const techStacks = [
   { id: 20, label: "Radix UI", icon: "/tools/radixui.svg" },
   { id: 21, label: "OpenAI", icon: "/tools/openai.svg" },
   { id: 22, label: "Shadcn UI", icon: "/tools/shadcnui.svg" },
-  { id: 23, label: "Framer Motion", icon: "/tools/framer.svg" },
-  { id: 24, label: "React Hook Form", icon: "/tools/reacthookform.svg" },
-  { id: 25, label: "API", icon: "/tools/api.svg" },
-  { id: 26, label: "React Router Dom", icon: "/tools/reactrouter.svg" },
-  { id: 27, label: "MDX", icon: "/tools/mdx.svg" },
-  
+  { id: 23, label: "React Hook Form", icon: "/tools/reacthookform.svg" },
+  { id: 24, label: "API", icon: "/tools/api.svg" },
+  { id: 25, label: "React Router Dom", icon: "/tools/reactrouter.svg" },
+  { id: 26, label: "MDX", icon: "/tools/mdx.svg" },
 ];
 
-export const languages = [
+export const languages: Language[] = [
   {
     id: "typescript",
     name: "TypeScript",
-    color: "#007acc", // TypeScript blue
+    color: "#007acc",
     icon: "/tools/typescript.svg",
     repo: "https://github.com/microsoft/TypeScript",
   },
   {
     id: "javascript",
     name: "JavaScript",
-    color: "#F7DF1E", // JavaScript yellow
+    color: "#F7DF1E",
     icon: "/tools/javascript.svg",
     repo: "https://github.com/tc39/ecma262",
   },
   {
     id: "css",
     name: "CSS",
-    color: "#800080", // CSS blue
+    color: "#800080",
     icon: "/tools/css3.svg",
     repo: "https://github.com/w3c/csswg-drafts",
   },
   {
     id: "html",
     name: "HTML",
-    color: "#E34F26", // HTML orange
+    color: "#E34F26",
     icon: "/tools/html5.svg",
     repo: "https://github.com/whatwg/html",
   },

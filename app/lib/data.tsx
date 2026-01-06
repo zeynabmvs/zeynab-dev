@@ -1,4 +1,69 @@
-export const profile = {
+import { ReactNode } from "react";
+
+export interface ProfileLink {
+  href: string;
+  label: string;
+  icon: ReactNode;
+  active: boolean;
+  to: string;
+}
+
+export interface Profile {
+  name: string;
+  role: string;
+  avatar: string;
+  bio: string;
+  contactLink: string;
+  links: ProfileLink[];
+  aboutMe: string[];
+}
+
+export interface Skill {
+  name: string;
+  icon: string;
+}
+
+export interface Skills {
+  react: Skill[];
+  languages: Skill[];
+  styling: Skill[];
+  tools: Skill[];
+  soft: Skill[];
+  designPattern: Skill[];
+}
+
+export interface Experience {
+  title: string;
+  role: string;
+  duration: string;
+  description: string;
+  responsibilities: string[];
+  imageUrl: string;
+  priority: number;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  repoUrl: string;
+  imageUrl: string;
+  projectLangs: number[];
+  tags: string[];
+  liveSite: string;
+  priority: number;
+  techStack: number[];
+  hasDetailsPage: boolean;
+}
+
+export interface HeaderLink {
+  href: string;
+  label: string;
+  target: "_self" | "_blank";
+  rel: string;
+}
+
+export const profile: Profile = {
   name: "Zeynab Movasaqpour",
   role: "Web Developer",
   avatar: "https://avatars.githubusercontent.com/u/30770159?v=4",
@@ -23,7 +88,7 @@ export const profile = {
         </svg>
       ),
       active: true,
-      to: "linkedIn"
+      to: "linkedIn",
     },
     {
       href: "https://github.com/zeynabmvs",
@@ -43,37 +108,17 @@ export const profile = {
         </svg>
       ),
       active: true,
-      to: "github"
-    },
-    {
-      href: "https://twitter.com/john-doe",
-      label: "johnDoe",
-      icon: (
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          strokeWidth="0"
-          viewBox="0 0 448 512"
-          className="size-4"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
-        </svg>
-      ),
-      active: false,
-      to: "twitter"
+      to: "github",
     },
   ],
   aboutMe: [
-    "Hi, I’m Zeynab, a web developer with over four years of experience in web development. I’ve worked on a variety of projects, both solo and in teams, and I’m always looking for new challenges that push me to grow and learn.",
-    "Over the past 9+ months, I’ve been diving deep into modern frontend tools like React, Next.js, and TypeScript by building open-source projects. I love creating clean, user-friendly interfaces and finding smart ways to automate repetitive tasks.",
-    "I’ve been collaborating on practice projects in a frontend team, where I contributed as both a coder and code reviewer. Through this experience, I developed the soft skills of a developer, improving communication, collaboration, and team workflow.",
+    "Hi, I'm Zeynab, a web developer with over four years of experience in web development. I've worked on a variety of projects, both solo and in teams, and I'm always looking for new challenges that push me to grow and learn.",
+    "Over the past 9+ months, I've been diving deep into modern frontend tools like React, Next.js, and TypeScript by building open-source projects. I love creating clean, user-friendly interfaces and finding smart ways to automate repetitive tasks.",
+    "I've been collaborating on practice projects in a frontend team, where I contributed as both a coder and code reviewer. Through this experience, I developed the soft skills of a developer, improving communication, collaboration, and team workflow.",
   ],
 };
 
-export const skills = {
+export const skills: Skills = {
   react: [
     {
       name: "React",
@@ -95,18 +140,6 @@ export const skills = {
       name: "React Query",
       icon: "/tools/react-query.svg",
     },
-    // {
-    //   name: "SSR",
-    //   icon: "/tools/figma.svg",
-    // },
-    // {
-    //   name: "SSG",
-    //   icon: "/tools/figma.svg",
-    // },
-    // {
-    //   name: "React Server Actions",
-    //   icon: "/tools/figma.svg",
-    // },
   ],
   languages: [
     {
@@ -133,14 +166,10 @@ export const skills = {
       name: "Accessibility",
       icon: "/tools/figma.svg",
     },
-        {
+    {
       name: "Sass",
       icon: "/tools/sass.svg",
     },
-    // {
-    //   name: "Core Web Vitals",
-    //   icon: "/tools/figma.svg",
-    // },
   ],
   styling: [
     {
@@ -180,36 +209,14 @@ export const skills = {
   ],
   soft: [
     {
-      name: "Team Collaboraiotn",
+      name: "Team Collaboration",
       icon: "/tools/figma.svg",
     },
-    // {
-    //   name: "Problem Solving",
-    //   icon: "/tools/figma.svg",
-    // },
-    // {
-    //   name: "Critical thinking",
-    //   icon: "/tools/figma.svg",
-    // },
-    // {
-    //   name: "Conflict Management",
-    //   icon: "/tools/figma.svg",
-    // },
   ],
-  designPattern: [
-    // {
-    //   name: "SOLID",
-    //   icon: "/tools/figma.svg",
-    // },
-    // {
-    //   name: "Design Thinking",
-    //   icon: "/tools/figma.svg",
-    // },
-  ],
+  designPattern: [],
 };
 
-// Set priority to 0 to exclude in UI
-export const experiences = [
+export const experiences: Experience[] = [
   {
     title: "Open Source & Team Projects",
     role: "Frontend Developer",
@@ -260,8 +267,7 @@ export const experiences = [
   },
 ];
 
-// Set priority to 0 to exclude in UI
-export const projects = [
+export const projects: Project[] = [
   {
     id: "podcraft",
     title: "Podcraft",
@@ -286,7 +292,7 @@ export const projects = [
     liveSite: "https://podcraft-roan.vercel.app/",
     priority: 1,
     techStack: [5, 3, 17, 18, 9, 21, 22, 19],
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
   {
     id: "portfolio",
@@ -294,12 +300,12 @@ export const projects = [
     description: "A minimal, lightweight developer portfolio",
     repoUrl: "https://github.com/zeynabmvs/zeynab-dev",
     imageUrl: "/projects/portfolio.png",
-    projectLangs: [0], 
+    projectLangs: [0],
     tags: ["Portfolio", "Personal Website", "Next.js", "TailwindCSS"],
     liveSite: "https://zeynab-dev.vercel.app/",
     priority: 1,
     techStack: [5, 3, 9, 27, 19],
-    hasDetailsPage: true
+    hasDetailsPage: true,
   },
   {
     id: "recipedia",
@@ -319,7 +325,7 @@ export const projects = [
     liveSite: "https://food-recipe-react-dun.vercel.app/",
     priority: 2,
     techStack: [4, 9, 26, 15],
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
   {
     id: "kanba",
@@ -332,7 +338,7 @@ export const projects = [
     liveSite: "https://kanba-hazel.vercel.app/",
     priority: 1,
     techStack: [4, 7, 10, 19],
-    hasDetailsPage: true
+    hasDetailsPage: true,
   },
   {
     id: "world-ranks",
@@ -356,7 +362,7 @@ export const projects = [
     liveSite: "",
     priority: 2,
     techStack: [4, 9, 8, 26, 15],
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
   {
     id: "acme-landing",
@@ -375,7 +381,7 @@ export const projects = [
     liveSite: "https://zeynabmvs.github.io/acme_landing/",
     priority: 0,
     techStack: [0, 1, 2],
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
   {
     id: "gitHub-profile",
@@ -386,11 +392,10 @@ export const projects = [
     imageUrl: "/projects/github-profile.png",
     projectLangs: [3, 2, 1],
     tags: ["JavaScript", "GitHub", "Responsive"],
-    liveSite: "",
+    liveSite: "https://github-profile-olive-phi.vercel.app",
     priority: 3,
     techStack: [4, 9, 15],
-    liveSite: "https://github-profile-olive-phi.vercel.app",
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
   {
     id: "cafe-store",
@@ -411,11 +416,11 @@ export const projects = [
     liveSite: "https://nextjs-cafe-store.vercel.app/",
     priority: 0,
     techStack: [5, 11, 3, 9, 19],
-    hasDetailsPage: false
+    hasDetailsPage: false,
   },
 ];
 
-export const headerLinks = [
+export const headerLinks: HeaderLink[] = [
   {
     href: "/",
     label: "Home",
@@ -441,3 +446,4 @@ export const headerLinks = [
     rel: "noopener noreferrer",
   },
 ];
+

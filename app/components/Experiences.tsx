@@ -30,7 +30,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         sizes="64px"
       />
     </div> */}
-    <div className="flex-grow mb-4">
+    <div className="grow mb-4">
       <h3 className="font-semibold mb-2">{role}</h3>
       <p className="text-sm text-muted dark:text-muted-dark">{title}</p>
       <p className="text-xs text-muted dark:text-muted-dark mt-2 flex items-center gap-1">

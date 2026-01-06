@@ -11,7 +11,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt }) => (
       alt={alt}
       width={300}
       height={300}
-      unoptimized={true}
+      priority
     />
   </div>
 );
