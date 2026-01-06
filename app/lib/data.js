@@ -6,8 +6,8 @@ export const profile = {
   contactLink: "mailto:zeynab.mvs@gmail.com",
   links: [
     {
-      href: "https://www.linkedin.com/in/zeynab-movasaqpour/",
-      label: "zeynab-movasaqpour",
+      href: "https://www.linkedin.com/in/movasaq/",
+      label: "movasaq",
       icon: (
         <svg
           stroke="currentColor"
