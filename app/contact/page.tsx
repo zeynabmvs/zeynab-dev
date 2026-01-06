@@ -14,8 +14,8 @@ export default function ContactPage() {
       <h1 className="text-3xl font-bold mb-4">Contact</h1>
       <div className="space-y-6">
         <p className="text-muted dark:text-muted-dark">
-          Feel free to reach out if you&apos;d like to collaborate, have a question, or
-          just want to connect!
+          Feel free to reach out if you&apos;d like to collaborate, have a
+          question, or just want to connect!
         </p>
         <div className="card p-6 space-y-4">
           <div>
@@ -52,4 +52,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

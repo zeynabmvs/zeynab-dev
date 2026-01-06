@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { projects, profile } from "@/app/lib/data";
+import { projects } from "@/app/lib/data";
 
 const siteUrl = "https://zeynab-dev.vercel.app";
 
@@ -35,4 +35,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...projectPages,
   ];
 }
-
